@@ -1,21 +1,20 @@
 <?php
 /**
- * * Template Name: Login Page
+ * * Template Name: Home Page Template
  *
  * @package blockhaus
  */
 
-
 get_header();
 ?>
 
-	<main id="primary" class="main-content py-20 lg:pt-8 lg:pb-20 grid-cols-4">
+	<main id="primary" class="main-content bg-neutral-light-100">
 
 		<?php
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'login' );
+			get_template_part( 'template-parts/content', 'home' );
 
 		endwhile; // End of the loop.
 		?>

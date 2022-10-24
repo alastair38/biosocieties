@@ -11,31 +11,14 @@
 
 ?>
 
-	<footer id="colophon" class="px-6 pt-20 place-items-center bg-white">
-<div class="grid grid-cols-3 gap-20">
+<footer class="bg-neutral-light-100">
 
 
-<div class="p-6 rounded-md space-y-4">
-	<p class="px-2 -rotate-1 bg-accent w-fit">Main links</p>
-	<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'footer-1',
-					'menu_id'        => 'footer-menu',
-					'menu_class'		 => 'flex flex-col'
-				)
-			);
-			?>
-</div>
+<div class="p-6 place-items-center">
+<div class="flex justify-center">
 
-<div class="p-6 rounded-md space-y-4">
-	
-	<p class="px-2 -rotate-1 bg-accent w-fit">Address</p>
-	<?php echo blockhaus_display_address(); ?>
-</div>
-
-<div class="p-6 rounded-md space-y-4">
-	<p class="px-2 -rotate-1 bg-accent w-fit">Follow us</p>
+<div class="p-6 flex gap-6">
+	<p class="font-black">Follow us</p>
   <?php echo blockhaus_display_social_profiles();?>
 </div>
 
@@ -45,9 +28,9 @@
 
 // Check rows exists.
 if( have_rows('details', 'option') ):?>
-<div class="py-12">
-<p class="font-bold text-center">Funders</p>
-	<ul class="flex gap-12 justify-center p-6 w-3/4 mx-auto">
+<div class="py-6">
+<!-- <p class="font-bold text-center">Funders</p> -->
+	<ul class="flex gap-12 justify-center w-1/2 mx-auto">
 <?php	// Loop through rows.
 	while( have_rows('details', 'option') ) : the_row();
 
@@ -60,8 +43,8 @@ if( have_rows('details', 'option') ):?>
 			// echo '</code>';
 			?>
 			<li class="flex-1 flex flex-col gap-4 items-center justify-center">
-				<a class="flex-1 bg-white rounded-md" href="<?php echo $url;?>">
-				<img class="object-contain px-2 h-full" src="<?php echo $logo_img['sizes']['medium'];?>" alt="<?php echo $logo_img['alt'];?>"/>
+				<a class="flex-1" href="<?php echo $url;?>">
+				<img class="object-contain w-3/5 mx-auto h-full" src="<?php echo $logo_img['sizes']['medium'];?>" alt="<?php echo $logo_img['alt'];?>"/>
 			</a>
 			</li>
 			
@@ -84,6 +67,8 @@ endif;
 				printf( esc_html_e( bloginfo('name') . ' &copy; ' . date("Y") , 'Blockhaus' ), 'Blockhaus' );
 				?>
 </p>
+
+</div>
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->
