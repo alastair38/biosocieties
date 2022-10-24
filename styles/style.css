@@ -1922,10 +1922,6 @@ input[type='text'], input[type='email'], textarea {
   height: 0px;
 }
 
-.h-24 {
-  height: 6rem;
-}
-
 .w-4\/5 {
   width: 80%;
 }
@@ -1986,10 +1982,6 @@ input[type='text'], input[type='email'], textarea {
 
 .w-32 {
   width: 8rem;
-}
-
-.w-24 {
-  width: 6rem;
 }
 
 .min-w-fit {

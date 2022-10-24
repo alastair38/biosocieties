@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" class="overflow-hidden relative bg-primary-default flex <?php print (get_post_type() === 'journal_editions') ? ' flex-row items-center' : ' flex-col';?> gap-2 rounded-md shadow-md">
 <?php 
 // if(('project' === get_post_type()) || ('post' === get_post_type())):
-blockhaus_post_thumbnail('full', 'h-24 w-24 object-top'); 
+blockhaus_post_thumbnail('full', 'aspect-square object-top'); 
 // endif;
 
 $external_link = get_field('external_link');
