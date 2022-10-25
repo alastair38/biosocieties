@@ -1210,7 +1210,16 @@ form#loginform input#wp-submit {
 .comments-area {
   border-radius: 0.375rem;
   border-width: 1px;
+  background-color: var(--wp--preset--color--primary-default);
   padding: 3rem;
+}
+
+.wp-block-button.comments-area:hover {
+  background-color: transparent;
+}
+
+.wp-block-button.comments-area:hover > .wp-block-button__link {
+  background-color: transparent;
 }
 
 ol.comment-list {
@@ -1255,22 +1264,15 @@ ol.comment-list li .comment-body, .comment-details {
 
 ol.comment-list li a.comment-reply-link, ol.comment-list li a.comment-edit-link {
   border-radius: 0.375rem;
-  background-color: var(--wp--preset--color--primary-default);
+  background-color: var(--wp--preset--color--secondary);
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+  color: var(--wp--preset--color--primary-default);
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.wp-block-buttonol.comment-list li a.comment-reply-link:hover, .wp-block-buttonol.comment-list li a.comment-edit-link:hover {
-  background-color: transparent;
-}
-
-.wp-block-buttonol.comment-list li a.comment-reply-link:hover > .wp-block-button__link, .wp-block-buttonol.comment-list li a.comment-edit-link:hover > .wp-block-button__link {
-  background-color: transparent;
 }
 
 ol.comment-list li a.comment-edit-link {

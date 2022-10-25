@@ -1,5 +1,5 @@
 .comments-area {
-  @apply rounded-md border p-12;
+  @apply rounded-md border p-12 bg-primary-default;
 }
 
 ol.comment-list {
@@ -21,7 +21,7 @@ ol.comment-list li .comment-body,
 
 ol.comment-list li a.comment-reply-link,
 ol.comment-list li a.comment-edit-link {
-  @apply bg-primary-default rounded-md py-1 px-3 shadow-md;
+  @apply bg-secondary text-primary-default rounded-md py-1 px-3 shadow-md;
 }
 
 ol.comment-list li a.comment-edit-link {

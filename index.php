@@ -31,7 +31,7 @@ get_header();
 				$transparent =  get_field(get_post_type() . '_page_transparent_header', 'options');?>
 
 
-				<h1 class="page-title z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start bg-white has-gigantic-font-size px-6 font-black uppercase font-sans"><?php single_post_title();?></h1>
+				<h1 class="page-title z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start bg-white has-gigantic-font-size px-6 font-black"><?php single_post_title();?></h1>
 				<?php 
 				if($header_image):
 				if($transparent): ?>

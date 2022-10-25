@@ -31,7 +31,7 @@ endif;
 
 			<?php 
 
-			the_archive_title( '<h1 class="page-title z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start bg-primary-default has-gigantic-font-size px-6 font-black uppercase">', '</h1>' );
+			the_archive_title( '<h1 class="page-title z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start bg-primary-default has-gigantic-font-size px-6 font-black">', '</h1>' );
 			if($header_image):
 			if($transparent):?>
 			<img class="h-80 place-self-end p-2 col-start-2 row-start-1 object-cover" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
