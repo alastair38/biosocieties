@@ -48,7 +48,7 @@ endif;
 			</header><!-- .page-header -->
 
 
-			<div class="pt-20 lg:py-6 grid my-12 w-11/12 md:w-2/3 mx-auto grid-cols-1 <?php print (get_post_type() === 'journal_editions' || 'video') ? ' md:grid-cols-2' : ' md:grid-cols-3';?> gap-6">
+			<div class="pt-20 lg:py-6 grid my-12 w-11/12 md:w-2/3 mx-auto grid-cols-1 <?php print (get_post_type() === 'journal_editions' || get_post_type() === 'video') ? ' md:grid-cols-2' : ' md:grid-cols-3';?> gap-6">
 				
 			<?php $description = get_field(get_post_type() . '_page_description', "options");
 
