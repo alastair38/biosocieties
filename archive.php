@@ -20,6 +20,10 @@ if($post_type === 'journal_editions'):
 	$cols = 'md:grid-cols-3';
 endif;
 
+if($post_type === 'video'):
+	$cols = 'md:grid-cols-2';
+endif;
+
 ?>
 
 	<!-- <main id="primary" class="pt-20 lg:p-6 bg-primary-default my-12 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 md:grid-cols-3 gap-6"> -->
@@ -44,7 +48,7 @@ endif;
 			</header><!-- .page-header -->
 
 
-			<div class="pt-20 lg:py-6 grid my-12 w-11/12 md:w-2/3 mx-auto grid-cols-1 <?php print (get_post_type() === 'journal_editions') ? ' md:grid-cols-2' : ' md:grid-cols-3';?> gap-6">
+			<div class="pt-20 lg:py-6 grid my-12 w-11/12 md:w-2/3 mx-auto grid-cols-1 <?php print (get_post_type() === 'journal_editions' || 'video') ? ' md:grid-cols-2' : ' md:grid-cols-3';?> gap-6">
 				
 			<?php $description = get_field(get_post_type() . '_page_description', "options");
 

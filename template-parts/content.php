@@ -11,9 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" class="overflow-hidden relative bg-primary-default flex <?php print (get_post_type() === 'journal_editions') ? ' flex-row items-center' : ' flex-col';?> gap-2 rounded-md shadow-md">
 <?php 
-// if(('project' === get_post_type()) || ('post' === get_post_type())):
-blockhaus_post_thumbnail('full', 'aspect-square object-top'); 
-// endif;
+if(('video' === get_post_type())):
+	blockhaus_post_thumbnail('full', 'aspect-video object-top'); 
+else: 
+	blockhaus_post_thumbnail('full', 'aspect-square object-top'); 
+endif;
 
 $external_link = get_field('external_link');
 
@@ -31,6 +33,11 @@ $external_link = get_field('external_link');
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="text-base font-bold">', '</h2>' );
+		endif;
+		$featured = get_field('featured_article');
+
+		if($featured === 'yes'):
+			echo '<span class="absolute text-sm top-2 right-2 rounded-full px-2 bg-primary-default">FEATURED</span>';
 		endif;
 
 		if ( 'post' === get_post_type() ) :
