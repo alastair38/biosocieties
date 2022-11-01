@@ -15,13 +15,14 @@ figcaption {
 /* PROFILE BLOCK HOVER STYLES */
 
 [class*='blockhaus'] .wp-block-button__link,
-[class*='blockhaus'] .wp-block-read-more {
+[class*='blockhaus'] .wp-block-read-more,
+.is-style-button-rounded a.wp-block-button__link {
   @apply hover:ring-4 hover:ring-offset focus:ring-4 focus:ring-offset;
 }
 
 /* PSEUDO STYLES FOR LINKS */
 
-.wp-block-button__link:active,
+/* .wp-block-button__link:active,
 .wp-block-button__link:visited {
   color: var(--wp--preset--color--secondary);
-}
+} */
