@@ -13,7 +13,9 @@
 <?php 
 if(('video' === get_post_type())):
 	blockhaus_post_thumbnail('full', 'aspect-video object-top'); 
-else: 
+elseif(('journal_editions' === get_post_type())):?>
+	<img src="<?php echo get_template_directory_uri() . '\assets\images\defaults\biosocieties-covers.png'?>" alt="" class="w-32 object-contain aspect-square p-2 bg-accent-default">
+<?php else: 
 	blockhaus_post_thumbnail('full', 'aspect-square object-top'); 
 endif;
 

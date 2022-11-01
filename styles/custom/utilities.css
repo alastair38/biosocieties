@@ -22,7 +22,9 @@ figcaption {
 
 /* PSEUDO STYLES FOR LINKS */
 
-/* .wp-block-button__link:active,
+.wp-block-button__link:active,
+.wp-block-button__link:focus,
+.wp-block-button__link:hover,
 .wp-block-button__link:visited {
-  color: var(--wp--preset--color--secondary);
-} */
+  @apply text-current;
+}

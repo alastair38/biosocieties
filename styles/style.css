@@ -2433,6 +2433,10 @@ input[type='text'], input[type='email'], textarea {
   font-family: "Myriad Pro Regular", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.font-serif {
+  font-family: "STIX Two Text", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
 .text-xl {
   font-size: var(--wp--preset--font-size--extra-large);
 }
@@ -2611,10 +2615,9 @@ figcaption {
 
 /* PSEUDO STYLES FOR LINKS */
 
-/* .wp-block-button__link:active,
-.wp-block-button__link:visited {
-  color: var(--wp--preset--color--secondary);
-} */
+.wp-block-button__link:active, .wp-block-button__link:focus, .wp-block-button__link:hover, .wp-block-button__link:visited {
+  color: currentColor;
+}
 
 .focus-within\:border-secondary:focus-within {
   border-color: var(--wp--preset--color--secondary);

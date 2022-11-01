@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" class="w-11/12 md:w-2/3 space-y-6 mx-auto overflow-hidden">
 	<header class="entry-header">
 		
-		<?php the_title( '<h1 class="has-gigantic-font-size p-6 font-black uppercase font-sans">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="has-gigantic-font-size p-6 font-black uppercase font-serif">', '</h1>' ); ?>
 		<?php blockhaus_post_thumbnail('full'); ?>
 	</header><!-- .entry-header -->
 
