@@ -218,10 +218,6 @@ iframe {
   @apply rounded-full;
 }
 
-.wp-block-button__link:hover {
-  @apply text-secondary bg-white transition-colors duration-200;
-}
-
 .wp-block-button.bg-primary-default:hover {
   @apply bg-transparent;
 }

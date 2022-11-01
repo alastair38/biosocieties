@@ -1084,17 +1084,6 @@ iframe {
   border-radius: 9999px;
 }
 
-.wp-block-button__link:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  color: var(--wp--preset--color--secondary);
-  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
-}
-
 .wp-block-button.bg-primary-default:hover {
   background-color: transparent;
 }
