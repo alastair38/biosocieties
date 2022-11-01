@@ -7,10 +7,10 @@
  */
 
 function blockhaus_scripts() {
-	wp_enqueue_style( 'blockhaus-style', get_template_directory_uri() . '/styles/style.css', array(), BLOCKHAUS_VERSION );
+	wp_enqueue_style( 'blockhaus-style', get_template_directory_uri() . '/styles/style.css', array(), wp_get_theme()->get( 'Version' ) );
 	wp_style_add_data( 'blockhaus-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'blockhaus-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), BLOCKHAUS_VERSION, true );
+	wp_enqueue_script( 'blockhaus-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
 
 	$cookies_set = get_field('cookies_set', 'option');
 
