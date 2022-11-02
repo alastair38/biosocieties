@@ -1848,12 +1848,12 @@ input[type='text'], input[type='email'], textarea {
   grid-row-start: 1;
 }
 
-.float-left {
-  float: left;
+.row-start-2 {
+  grid-row-start: 2;
 }
 
-.clear-both {
-  clear: both;
+.float-left {
+  float: left;
 }
 
 .mx-auto {
@@ -2167,6 +2167,10 @@ input[type='text'], input[type='email'], textarea {
   margin-bottom: calc(4rem * var(--tw-space-y-reverse));
 }
 
+.place-self-start {
+  place-self: start;
+}
+
 .place-self-end {
   place-self: end;
 }
@@ -2283,8 +2287,12 @@ input[type='text'], input[type='email'], textarea {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
 }
 
-.to-secondary {
-  --tw-gradient-to: var(--wp--preset--color--secondary);
+.to-slate-900 {
+  --tw-gradient-to: #0f172a;
+}
+
+.to-neutral-dark-500 {
+  --tw-gradient-to: var(--wp--preset--color--neutral-dark-500);
 }
 
 .bg-cover {
@@ -2439,10 +2447,6 @@ input[type='text'], input[type='email'], textarea {
   padding-top: 2rem;
 }
 
-.pt-6 {
-  padding-top: 1.5rem;
-}
-
 .text-center {
   text-align: center;
 }
@@ -2469,10 +2473,6 @@ input[type='text'], input[type='email'], textarea {
 
 .text-lg {
   font-size: var(--wp--preset--font-size--large);
-}
-
-.text-huge {
-  font-size: var(--wp--preset--font-size--huge);
 }
 
 .text-base {

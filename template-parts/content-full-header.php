@@ -17,11 +17,11 @@ endif;
 
 <article id="post-<?php the_ID(); ?>" class="w-full space-y-12">
 
-	<header class="entry-header grid grid-cols-header relative h-80 has-<?php echo $background;?>-background-color has-background bg-fixed bg-cover overflow-hidden">
+	<header class="entry-header grid grid-cols-header text-primary-default space-y-6 py-20 bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden">
 
 		<?php 
 
-		the_title( '<h1 class="page-title z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start bg-primary-default has-gigantic-font-size px-6 font-black uppercase font-serif">', '</h1>' );
+		the_title( '<h1 class="w-fit col-start-2 row-start-1 text-current place-self-end justify-self-start text-gigantic font-black leading-tight">', '</h1>' );
 		if ( has_post_thumbnail() ):
 		if($transparent):?>
 		<?php the_post_thumbnail( 'full', ['class' => 'h-80 place-self-end p-2 col-start-2 row-start-1 object-cover'] ); ?>
