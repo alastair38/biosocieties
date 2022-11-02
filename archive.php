@@ -20,12 +20,18 @@ $post_type = get_post_type();
 
 			<header class="entry-header h-80 grid grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden">
 
-			<?php $header_image = get_field($post_type . '_header', 'options');?>
+			<?php 
+			$header_image = get_field($post_type . '_header', 'options');
+			$contain_image = get_field($post_type . '_contain_header', 'options');
+			
+			?>
 
 			<?php 
 			if($header_image):?>
 			<h1 class="page-title z-0 w-fit col-start-2 row-start-1 row-span-1 place-self-center justify-self-start bg-primary-default has-gigantic-font-size px-6 font-black"><?php the_archive_title();?></h1>
-			<img class="col-span-full w-full row-start-1 h-80 object-cover" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
+			<img class="<?php print($contain_image ? 'col-start-3 row-start-1 h-80 object-contain p-6' : 'col-span-full w-full row-start-1 h-80 object-cover');?>" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
+
+		
 
 			<?php else:?>
 

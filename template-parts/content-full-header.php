@@ -8,6 +8,7 @@
  */
 
 $background_image = get_field('background_image_layout');
+$contain_image = get_field('contain_image_layout');
 
 ?>
 
@@ -21,7 +22,7 @@ $background_image = get_field('background_image_layout');
 		<?php 
 		the_title( '<h1 class="w-fit z-0 col-start-2 row-start-1 text-current bg-primary-default px-2 place-self-center justify-self-start text-gigantic font-black leading-tight">', '</h1>' );
 		
-		the_post_thumbnail( 'full', ['class' => 'col-span-full w-full row-start-1 h-80 object-cover'] ); ?>
+		the_post_thumbnail( 'full', ['class' => $contain_image ? 'col-start-3 row-start-1 h-80 object-contain p-6' : 'col-span-full w-full row-start-1 h-80 object-cover'] ); ?>
 		<?php else:
 		the_title( '<h1 class="w-fit z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start text-gigantic font-black leading-tight">', '</h1>' );
 		endif;?>
