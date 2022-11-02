@@ -22,7 +22,7 @@ p a {
 }
 
 [aria-current='page'] {
-  @apply underline decoration-accent-default decoration-4;
+  @apply underline decoration-accent-default decoration-2;
 }
 
 main {

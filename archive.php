@@ -56,7 +56,33 @@ endif;
 
 			<p class="col-span-full"><?php echo $description;?></p>
 
-			<?php endif;?>
+			<?php endif;
+			if($post_type === 'articles-and-reviews'):
+
+			$taxonomies = get_terms( array(
+				'taxonomy' => 'articles_and_reviews_tax',
+				'hide_empty' => true
+			) );
+			
+			if ( !empty($taxonomies) ) :
+				$output = '<ul class="col-span-full flex gap-6 mb-12">';
+				foreach( $taxonomies as $category ) {
+					
+				
+						
+							$output.= '<li><a class="rounded-full px-3 py-1 bg-accent-default text-primary-default hover:bg-secondary focus:bg-secodnary" href="'. get_term_link($category->term_id) . '">
+								'. esc_html( $category->name ) .'</a></li>';
+						
+					
+					
+				}
+				$output.='</ul>';
+				echo $output;
+			endif;
+
+			endif;
+			
+			?>
 
 			<?php if ( have_posts() ) :
 			/* Start the Loop */

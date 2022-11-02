@@ -14,22 +14,23 @@
 
 	<article id="post-<?php the_ID(); ?>" class="w-full space-y-12">
 	
-	<header class="entry-header grid grid-cols-header relative h-80 bg-curves bg-fixed bg-cover overflow-hidden">
+	<header class="entry-header grid grid-cols-header relative h-80 bg-gradient-to-t from-accent-default to-secondary overflow-hidden">
 
 		<?php 
 		
-		the_title( '<h1 class="page-title z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start bg-primary-default has-gigantic-font-size px-6 font-black leading-tight">', '</h1>' );
-		if ( has_post_thumbnail() ): ?>
-			<?php the_post_thumbnail( 'full', ['class' => 'h-80 w-full col-span-full row-start-1 object-cover'] ); ?>
+		the_title( '<h1 class="page-title z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start text-huge leading-tight text-primary-default">', '</h1>' );
 		
-		<?php endif;
 	?>
 		</header><!-- .page-header -->
 
 	
-
 	<div class="space-y-6 w-11/12 md:w-2/3 mx-auto overflow-hidden">
 		<?php
+
+if ( has_post_thumbnail() ): ?>
+	<?php the_post_thumbnail( 'full', ['class' => 'w-1/3 object-contain mr-6 mt-6 float-left rounded-md shadow-md'] ); ?>
+
+<?php endif;
 
 		the_content();
 
@@ -46,12 +47,12 @@
 		?>
 
 	
-<div class="entry-meta italic">
+<p class="entry-meta italic clear-both pt-6">
 				<?php
 				blockhaus_posted_on();
 				blockhaus_posted_by();
 				?>
-			</div><!-- .entry-meta -->
+			</p><!-- .entry-meta -->
 	
 	<?php $social_sharing = get_field('sharing_enabled');
 	if($social_sharing):
