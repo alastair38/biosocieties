@@ -9,20 +9,7 @@
 
 get_header();
 
-$header_image = get_field(get_post_type() . '_header', 'options');
-$transparent =  get_field(get_post_type() . '_page_transparent_header', 'options');
-$background =  get_field(get_post_type() . '_choose_background', 'options');
-if(!$background):
-	$background = 'no';
-endif;
 $post_type = get_post_type();
-if($post_type === 'journal_editions'):
-	$cols = 'md:grid-cols-3';
-endif;
-
-if($post_type === 'video'):
-	$cols = 'md:grid-cols-2';
-endif;
 
 ?>
 
@@ -31,26 +18,27 @@ endif;
 
 			<!-- <header class="col-span-full"> -->
 
-			<header class="entry-header grid grid-cols-header relative py-20 has-<?php echo $background;?>-background-color has-background bg-curves bg-fixed bg-cover overflow-hidden">
+			<header class="entry-header h-80 grid grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden">
+
+			<?php $header_image = get_field($post_type . '_header', 'options');?>
 
 			<?php 
+			if($header_image):?>
+			<h1 class="page-title z-0 w-fit col-start-2 row-start-1 row-span-1 place-self-center justify-self-start bg-primary-default has-gigantic-font-size px-6 font-black"><?php the_archive_title();?></h1>
+			<img class="col-span-full w-full row-start-1 h-80 object-cover" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
 
-			the_archive_title( '<h1 class="page-title z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start bg-primary-default has-gigantic-font-size px-6 font-black">', '</h1>' );
-			if($header_image):
-			if($transparent):?>
-			<img class="h-full place-self-end p-2 col-start-2 row-start-1 object-cover" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
-			<?php else: ?>
+			<?php else:?>
 
-			<img class="h-full w-full col-span-full row-start-1 object-cover" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
+			<h1 class="page-title z-0 w-fit col-start-2 row-start-1 row-span-1 place-self-center justify-self-start text-gigantic font-black text-primary-default"><?php the_archive_title();?></h1>
 
 			<?php endif;
-			endif; ?>
+			?>
 			</header><!-- .page-header -->
 
 
-			<div class="pt-20 lg:py-6 grid my-12 w-11/12 md:w-2/3 mx-auto grid-cols-1 <?php print (get_post_type() === 'journal_editions' || get_post_type() === 'video') ? ' md:grid-cols-2' : ' md:grid-cols-3';?> gap-6">
+			<div class="pt-20 lg:py-6 grid my-12 w-11/12 md:w-2/3 mx-auto grid-cols-1 <?php print ($post_type === 'journal_editions' || $post_type === 'video') ? ' md:grid-cols-2' : ' md:grid-cols-3';?> gap-6">
 				
-			<?php $description = get_field(get_post_type() . '_page_description', "options");
+			<?php $description = get_field($post_type . '_page_description', "options");
 
 			if($description):?>
 

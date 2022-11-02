@@ -1354,6 +1354,10 @@ ol.comment-list li a.comment-edit-link {
   align-items: center;
 }
 
+.logged-in-as a {
+  margin-left: 0.5rem;
+}
+
 .logged-in-as a:last-of-type {
   display: none;
 }
@@ -1844,6 +1848,10 @@ input[type='text'], input[type='email'], textarea {
   grid-column-start: 2;
 }
 
+.row-span-1 {
+  grid-row: span 1 / span 1;
+}
+
 .row-start-1 {
   grid-row-start: 1;
 }
@@ -1938,10 +1946,6 @@ input[type='text'], input[type='email'], textarea {
   height: 1.5rem;
 }
 
-.h-80 {
-  height: 20rem;
-}
-
 .h-8 {
   height: 2rem;
 }
@@ -1956,6 +1960,14 @@ input[type='text'], input[type='email'], textarea {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-64 {
+  height: 16rem;
+}
+
+.h-80 {
+  height: 20rem;
 }
 
 .h-0 {
@@ -2175,6 +2187,10 @@ input[type='text'], input[type='email'], textarea {
   place-self: end;
 }
 
+.place-self-center {
+  place-self: center;
+}
+
 .self-start {
   align-self: flex-start;
 }
@@ -2258,10 +2274,6 @@ input[type='text'], input[type='email'], textarea {
   background-color: var(--wp--preset--color--accent);
 }
 
-.bg-accent-tertiary {
-  background-color: var(--wp--preset--color--accent-tertiary);
-}
-
 .bg-neutral-light-500 {
   background-color: var(--wp--preset--color--neutral-light-500);
 }
@@ -2289,10 +2301,6 @@ input[type='text'], input[type='email'], textarea {
 
 .to-slate-900 {
   --tw-gradient-to: #0f172a;
-}
-
-.to-neutral-dark-500 {
-  --tw-gradient-to: var(--wp--preset--color--neutral-dark-500);
 }
 
 .bg-cover {

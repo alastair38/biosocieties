@@ -7,34 +7,25 @@
  * @package blockhaus
  */
 
-$transparent =  get_field('transparent_image_layout');
-$background =  get_field('choose_background');
-if(!$background):
-	$background = 'no';
-endif;
+$background_image = get_field('background_image_layout');
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="w-full space-y-12">
 
-	<header class="entry-header grid grid-cols-header text-primary-default space-y-6 py-20 bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden">
+	<header class="entry-header grid grid-cols-header h-80 bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden">
 
 		<?php 
 
-		the_title( '<h1 class="w-fit col-start-2 row-start-1 text-current place-self-end justify-self-start text-gigantic font-black leading-tight">', '</h1>' );
-		if ( has_post_thumbnail() ):
-		if($transparent):?>
-		<?php the_post_thumbnail( 'full', ['class' => 'h-80 place-self-end p-2 col-start-2 row-start-1 object-cover'] ); ?>
+		if ( has_post_thumbnail() && $background_image ):?>
+		<?php 
+		the_title( '<h1 class="w-fit z-0 col-start-2 row-start-1 text-current bg-primary-default px-2 place-self-center justify-self-start text-gigantic font-black leading-tight">', '</h1>' );
 		
-		<?php else: ?>
-			<?php the_post_thumbnail( 'full', ['class' => 'h-80 w-full col-span-full row-start-1 object-cover'] ); ?>
-		
-		<?php endif;
-		endif;
-	?>
+		the_post_thumbnail( 'full', ['class' => 'col-span-full w-full row-start-1 h-80 object-cover'] ); ?>
+		<?php else:
+		the_title( '<h1 class="w-fit z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start text-gigantic font-black leading-tight">', '</h1>' );
+		endif;?>
 	</header><!-- .page-header -->
-
-	
 
 	<div class="space-y-6 w-11/12 md:w-2/3 mx-auto overflow-hidden">
 		<?php

@@ -24,24 +24,20 @@ get_header();
 
 			if ( is_home() && ! is_front_page() ) :?>
 			
-			<header class="entry-header grid grid-cols-header relative py-20 bg-curves bg-accent-tertiary bg-fixed bg-cover overflow-hidden">
+			<header class="entry-header h-80 grid grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden">
 
+				<?php $header_image = get_field(get_post_type() . '_header', 'options');?>
+	
 				<?php 
-				$header_image = get_field(get_post_type() . '_header', 'options');
-				$transparent =  get_field(get_post_type() . '_page_transparent_header', 'options');?>
-
-
-				<h1 class="page-title z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start bg-white has-gigantic-font-size px-6 font-black"><?php single_post_title();?></h1>
-				<?php 
-				if($header_image):
-				if($transparent): ?>
-				<img class="h-full place-self-end p-2 col-start-2 row-start-1 object-cover" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
-				<?php else: ?>
+				if($header_image):?>
+				<h1 class="page-title z-0 w-fit col-start-2 row-start-1 row-span-1 place-self-center justify-self-start bg-primary-default has-gigantic-font-size px-6 font-black"><?php single_post_title();?></h1>
+				<img class="col-span-full w-full row-start-1 h-80 object-cover" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
+			
+				<?php else:?>
 				
-				<img class="h-full w-full col-span-full row-start-1 object-cover" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
-
-				<?php endif; 
-				endif;
+				<h1 class="page-title z-0 w-fit col-start-2 row-start-1 row-span-1 place-self-center justify-self-start text-gigantic font-black text-primary-default"><?php single_post_title();?></h1>
+			
+				<?php endif;
 				?>
 			</header><!-- .page-header -->
 
