@@ -56,7 +56,11 @@ form.comment-form,
 }
 
 .logged-in-as {
-  @apply flex items-center;
+  @apply flex items-center gap-2;
+}
+
+.logged-in-as a {
+  @apply ml-2;
 }
 
 .logged-in-as a:last-of-type {
