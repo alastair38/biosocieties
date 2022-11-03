@@ -83,7 +83,10 @@ if ( has_post_thumbnail() ): ?>
 		the_content();
 
 		if ( comments_open() || get_comments_number() ) :
+		echo '<aside class="p-10 border border-neutral-light-500 rounded-md space-y-6">
+		<h2 class="text-xl">Comments</h2>';
 		comments_template();
+		echo '</aside>';
 		endif;
 
 		wp_link_pages(

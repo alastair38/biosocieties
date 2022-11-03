@@ -29,14 +29,14 @@ $post_type = get_post_type();
 	<?php 
 
 if ( $header_image ):?>
-<div class="mx-auto lg:mx-0  z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start">
+<div class="mx-auto lg:mx-0 z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start">
 <?php 
 the_archive_title( '<h1 class="z-0 text-xl lg:text-gigantic text-current font-black leading-tight">', '</h1>' );?>
 </div>
 <?php
 	the_post_thumbnail( 'full', ['class' => $contain_image ? 'col-start-3 row-start-1 m-0 hidden lg:block lg:h-80 object-contain p-6' : 'col-span-full w-full row-start-1 h-80 object-cover'] ); ?>
 <?php else:?>
-<div class="text-primary-default col-start-2 row-start-1 text-current place-self-center justify-self-start">
+<div class="mx-auto lg:mx-0 text-primary-default col-start-2 row-start-1 text-current place-self-center justify-self-start">
 <?php the_archive_title( '<h1 class="text-xl lg:text-gigantic z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start font-black leading-tight">', '</h1>' );?>
 
 	</div>
