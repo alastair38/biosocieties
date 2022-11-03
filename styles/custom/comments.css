@@ -7,11 +7,11 @@ ol.commentlist {
 }
 
 li article {
-  @apply space-y-6 bg-primary-default p-6 my-6 rounded-md;
+  @apply space-y-6 bg-primary-default p-6 my-6 rounded-md relative;
 }
 
 .edit-link a {
-  @apply bg-red-200 rounded-full px-3 py-1 ml-2 not-italic uppercase text-sm;
+  @apply bg-gray-200 rounded-md px-2 not-italic uppercase text-sm absolute top-1 right-1;
 }
 
 ul.children article {
@@ -40,8 +40,7 @@ li.depth-1 {
 }
 
 .comment-meta {
-  display: flex;
-  justify-content: space-between;
+  @apply flex flex-wrap justify-between;
 }
 
 .comment-metadata {
@@ -58,6 +57,11 @@ ol.comment-list > li {
 
 ol.children > li {
   @apply bg-primary-default p-6 rounded-md my-6;
+}
+
+textarea,
+input {
+  @apply w-full;
 }
 
 ol.comment-list li .comment-body,
@@ -103,10 +107,6 @@ form.comment-form .comment-form-comment textarea {
 
 .comment-reply-title small #cancel-comment-reply-link {
   @apply h-full flex items-center bg-red-600 text-primary-default px-3 ml-3 rounded-md;
-}
-
-.logged-in-as {
-  @apply flex items-center;
 }
 
 .logged-in-as a {
