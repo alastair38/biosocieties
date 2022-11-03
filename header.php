@@ -28,7 +28,7 @@
 	<header id="masthead" class="bg-white fixed top-0 left-0 right-0 z-50 p-2 lg:relative flex justify-between lg:p-6 items-center">
 		<div class="flex items-center gap-2">
 
-    <img src="<?php echo get_template_directory_uri() . '\assets\images\logo\logo.webp'?>" alt="" class="w-10 h-10 object-contain">
+    <!-- <img src="<?php echo get_template_directory_uri() . '\assets\images\logo\logo.webp'?>" alt="" class="w-10 h-10 object-contain"> -->
 				<span class="has-extra-large-font-size font-black"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
 			
 		</div><!-- .site-branding -->
@@ -43,7 +43,7 @@
 				array(
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
-					'menu_class'		 => 'flex flex-col text-2xl lg:text-base lg:flex-row absolute lg:relative left-0 right-0 top-0 -z-10 lg:z-0 bg-gray-100 -translate-y-full lg:translate-y-0 invisible lg:visible lg:bg-transparent gap-4 lg:gap-6 h-screen lg:h-auto justify-center items-center ml-auto ease-in-out duration-200'
+					'menu_class'		 => 'flex flex-col lg:leading-none text-2xl lg:text-base lg:flex-row absolute lg:relative left-0 right-0 top-0 -z-10 lg:z-0 bg-gray-100 -translate-y-full lg:translate-y-0 invisible lg:visible lg:bg-transparent gap-4 lg:gap-6 h-screen lg:h-auto justify-center items-center ml-auto ease-in-out duration-200'
 				)
 			);
 			?>

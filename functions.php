@@ -98,5 +98,3 @@ add_filter( 'get_the_archive_title', function ($title) {
 	
 	return $title;
  });
-
- require_once get_parent_theme_file_path( '/better-comments.php' );

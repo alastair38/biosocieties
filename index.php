@@ -23,29 +23,35 @@ get_header();
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :?>
-			
-			<header class="entry-header h-80 grid grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden">
-
-				<?php 
+			<?php 
 				
 				$header_image = get_field(get_post_type() . '_header', 'options');
 				$contain_image = get_field($post_type . '_contain_header', 'options');
 				?>
 	
-				<?php 
-				if($header_image):?>
-				<h1 class="page-title z-0 w-fit col-start-2 row-start-1 row-span-1 place-self-center justify-self-start bg-primary-default has-gigantic-font-size px-6 font-black"><?php single_post_title();?></h1>
-				<img class="<?php print($contain_image ? 'col-start-3 row-start-1 h-80 object-contain p-6' : 'col-span-full w-full row-start-1 h-80 object-cover');?>" src="<?php echo $header_image['url'];?>" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
 			
-				<?php else:?>
-				
-				<h1 class="page-title z-0 w-fit col-start-2 row-start-1 row-span-1 place-self-center justify-self-start text-gigantic font-black text-primary-default"><?php single_post_title();?></h1>
 			
-				<?php endif;
-				?>
-			</header><!-- .page-header -->
 
-				<div class="pt-20 lg:py-6 bg-primary-default grid my-12 rounded-md w-11/12 md:w-2/3 mx-auto grid-cols-1 md:grid-cols-4 gap-6">
+			<header class="entry-header py-20 lg:py-0 grid grid-cols-header-small lg:grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden mt-14 lg:mt-0">
+
+<?php 
+
+if ( $header_image ):?>
+<div class="mx-auto lg:mx-0 z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start">
+<?php 
+single_post_title( '<h1 class="z-0 text-xl lg:text-gigantic text-current font-black leading-tight">', '</h1>' );?>
+</div>
+<?php
+the_post_thumbnail( 'full', ['class' => $contain_image ? 'col-start-3 row-start-1 hidden m-0 lg:block lg:h-80 object-contain p-6' : 'col-span-full w-full row-start-1 lg:h-80 object-cover'] ); ?>
+<?php else:?>
+<div class="mx-auto flex items-center lg:mx-0 text-primary-default lg:h-80 col-start-2 row-start-1 text-current place-self-center justify-self-start">
+<?php single_post_title( '<h1 class="text-xl lg:text-gigantic z-0 text-primary-default font-black leading-tight">', '</h1>' );?>
+
+</div>
+<?php endif;?>
+	</header><!-- .page-header -->
+
+				<div class="bg-primary-default grid my-6 md:my-12 rounded-md w-11/12 lg:w-2/3 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
 				<?php
 			endif;

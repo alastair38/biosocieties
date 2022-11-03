@@ -8,6 +8,18 @@ module.exports = {
     './functions.php',
     '../../plugins/blockhaus-functionality/includes/blocks/**/*.php',
   ],
+  safelist: [
+    'lg:grid-cols-4',
+    'lg:grid-cols-3',
+    'lg:grid-cols-2',
+    'lg:py-20',
+    'lg:flex-row',
+    'lg:w-1/3',
+    'lg:w-2/3',
+    'lg:gap-12',
+    'lg:w-4/5',
+    'text-base',
+  ],
   theme: {
     fontFamily: {
       sans: ['"Myriad Pro Regular"', ...defaultTheme.fontFamily.sans],
@@ -67,6 +79,7 @@ module.exports = {
         // Complex site-specific column configuration
         hero: '3fr 3rem 2fr',
         header: '16.5% 1fr 16.5%',
+        'header-small': 'auto 91.6667% auto',
       },
       typography: {
         DEFAULT: {

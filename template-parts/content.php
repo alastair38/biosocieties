@@ -23,7 +23,7 @@ $external_link = get_field('external_link');
 
 
 ?>
-	<a class="flex flex-col gap-2 p-6" href="<?php 
+	<a class="flex flex-col gap-2 p-3" href="<?php 
 	
 	if($external_link) {
 		echo esc_url( $external_link );
