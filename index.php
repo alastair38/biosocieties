@@ -32,7 +32,7 @@ get_header();
 			
 			
 
-			<header class="entry-header py-20 lg:py-0 grid grid-cols-header-small lg:grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden mt-14 lg:mt-0">
+			<header class="entry-header<?php print($background_image ? ' py-0 ' : ' py-20 lg:py-0 h-auto lg:h-80 ');?>grid grid-cols-header-small lg:grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden mt-14 lg:mt-0">
 
 <?php 
 
