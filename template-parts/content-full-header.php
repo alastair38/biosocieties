@@ -12,19 +12,19 @@ $contain_image = get_field('contain_image_layout');
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="w-full space-y-12">
+<article id="post-<?php the_ID(); ?>" class="w-full space-y-6 md:space-y-12">
 
-<header class="entry-header<?php print($background_image ? ' py-0 ' : ' py-20 lg:py-0 ');?>grid grid-cols-header-small lg:grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden">
+<header class="entry-header<?php print($background_image ? ' py-0 ' : ' py-20 lg:py-0 h-auto lg:h-80 ');?>grid grid-cols-header-small lg:grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden mt-14 lg:mt-0">
 
 		<?php 
 
 		if ( has_post_thumbnail() && $background_image ):?>
 		<?php 
-		the_title( '<h1 class="w-fit z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start text-gigantic font-black leading-tight">', '</h1>' );
+		the_title( '<h1 class="w-fit mx-auto lg:mx-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start text-gigantic font-black leading-tight">', '</h1>' );
 		
 		the_post_thumbnail( 'full', ['class' => !$contain_image ? 'col-start-3 row-start-1 h-80 object-contain p-6' : 'col-span-full w-full row-start-1 h-80 object-cover'] ); ?>
 		<?php else:
-		the_title( '<h1 class="w-fit z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start text-gigantic font-black leading-tight">', '</h1>' );
+		the_title( '<h1 class="w-fit mx-auto lg:mx-0 z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start text-gigantic font-black leading-tight">', '</h1>' );
 		endif;?>
 	</header><!-- .page-header -->
 

@@ -1977,6 +1977,10 @@ input[type='text'], input[type='email'], textarea {
   height: 0px;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .w-4\/5 {
   width: 80%;
 }
@@ -3024,12 +3028,12 @@ figcaption {
     grid-template-columns: 16.5% 1fr 16.5%;
   }
 
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-2 {
