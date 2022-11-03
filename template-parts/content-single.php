@@ -83,7 +83,7 @@ if ( has_post_thumbnail() ): ?>
 		the_content();
 
 		if ( comments_open() || get_comments_number() ) :
-			comments_template();
+		comments_template();
 		endif;
 
 		wp_link_pages(

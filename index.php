@@ -42,7 +42,7 @@ if ( $header_image ):?>
 single_post_title( '<h1 class="z-0 text-xl lg:text-gigantic text-current font-black leading-tight">', '</h1>' );?>
 </div>
 <?php
-the_post_thumbnail( 'full', ['class' => $contain_image ? 'col-start-3 row-start-1 hidden m-0 lg:block lg:h-80 object-contain p-6' : 'col-span-full w-full row-start-1 lg:h-80 object-cover'] ); ?>
+the_post_thumbnail( 'full', ['class' => $contain_image ? 'col-start-3 row-start-1 hidden m-0 lg:block lg:h-80 object-contain p-6' : 'col-span-full w-full row-start-1 hidden lg:h-80 object-cover'] ); ?>
 <?php else:?>
 <div class="mx-auto flex items-center lg:mx-0 text-primary-default lg:h-80 col-start-2 row-start-1 text-current place-self-center justify-self-start">
 <?php single_post_title( '<h1 class="text-xl lg:text-gigantic z-0 text-primary-default font-black leading-tight">', '</h1>' );?>
