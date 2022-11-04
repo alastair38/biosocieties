@@ -75,7 +75,7 @@ the_title( '<h1 class="z-0 text-xl lg:text-gigantic text-current font-black lead
 	<div class="space-y-6 w-11/12 lg:w-2/3 mx-auto overflow-hidden">
 		<?php
 
-if ( has_post_thumbnail() ): ?>
+if ( has_post_thumbnail() && (get_post_type() !== 'video') ): ?>
 	<?php the_post_thumbnail( 'full', ['class' => 'w-1/3 object-contain mr-6 mt-6 float-left rounded-md shadow-md'] ); ?>
 
 <?php endif;

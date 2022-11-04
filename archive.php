@@ -44,7 +44,7 @@ the_archive_title( '<h1 class="z-0 text-xl lg:text-gigantic text-current font-bl
 		</header><!-- .page-header -->
 
 
-			<div class="py-6 grid my-6 lg:my-12 w-11/12 lg:w-2/3 mx-auto grid-cols-1 <?php print ($post_type === 'journal_editions' || $post_type === 'video') ? ' md:grid-cols-2' : ' md:grid-cols-3';?> gap-6">
+			<div class="py-6 grid my-6 lg:my-12 w-11/12 lg:w-2/3 mx-auto grid-cols-1 <?php print ($post_type === 'journal_editions') ? ' md:grid-cols-2' : ' md:grid-cols-3';?> gap-6">
 				
 			<?php $description = get_field($post_type . '_page_description', "options");
 
