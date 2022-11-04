@@ -2109,6 +2109,10 @@ input[type='text'], input[type='email'], textarea {
   width: 91.666667%;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -2119,10 +2123,6 @@ input[type='text'], input[type='email'], textarea {
 
 .w-3\/5 {
   width: 60%;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .w-5 {
@@ -3164,12 +3164,16 @@ figcaption {
     flex-direction: row;
   }
 
-  .lg\:gap-12 {
-    gap: 3rem;
+  .lg\:gap-0 {
+    gap: 0px;
   }
 
   .lg\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .lg\:gap-12 {
+    gap: 3rem;
   }
 
   .lg\:space-y-6 > :not([hidden]) ~ :not([hidden]) {

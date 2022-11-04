@@ -28,7 +28,12 @@
 	<header id="masthead" class="bg-white fixed top-0 left-0 right-0 z-50 p-2 lg:relative flex justify-between lg:p-6 items-center">
 		<div class="flex items-center gap-2">
 
-    <!-- <img src="<?php echo get_template_directory_uri() . '\assets\images\logo\logo.webp'?>" alt="" class="w-10 h-10 object-contain"> -->
+	
+<!-- 		
+			<img src="<?php echo get_template_directory_uri() . '\assets\images\logo\logo.png'?>" alt="" class="h-10"> -->
+		
+    
+	
 				<span class="has-extra-large-font-size font-black"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
 			
 		</div><!-- .site-branding -->
