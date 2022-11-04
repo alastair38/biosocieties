@@ -14,7 +14,7 @@
 		<?php the_title( '<h1>', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<div class="space-y-6 lg:space-y-16 py-16">
+	<div class="py-16 lg:py-0">
 		<?php
 		the_content();
 		?>

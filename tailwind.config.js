@@ -19,6 +19,7 @@ module.exports = {
     'lg:gap-12',
     'lg:w-4/5',
     'text-base',
+    'lg:p-12',
   ],
   theme: {
     fontFamily: {

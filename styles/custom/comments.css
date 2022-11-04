@@ -11,7 +11,7 @@ li article {
 }
 
 .edit-link a {
-  @apply bg-gray-200 rounded-md px-2 not-italic uppercase text-sm absolute top-1 right-1;
+  @apply bg-gray-200 rounded-md px-2 not-italic uppercase text-sm absolute bottom-6 right-6;
 }
 
 ul.children article {
