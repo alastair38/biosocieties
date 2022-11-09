@@ -40,6 +40,6 @@ function block_variations() {
 
 	function custom_admin_css() {
   
-		wp_enqueue_style( 'admin_styles', get_template_directory_uri() . '/styles/admin.css',true,'1.1','all');
+		wp_enqueue_style( 'admin_styles', get_template_directory_uri() . '/styles/admin.css',true,'1.1','all', wp_get_theme()->get( 'Version' ));
 	}
 add_action('admin_footer', 'custom_admin_css');
