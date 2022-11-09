@@ -1,6 +1,6 @@
 /* ADMIN STYLES */
 :root {
-  --wp--preset--color--accent: rgba(0 20 137 / 1);
+  --wp--preset--color--accent-quarter: rgba(210 175 255 / 1);
   --wp--preset--color--accent-secondary: rgba(222 56 49 / 1);
   --wp--preset--color--accent-tertiary: rgba(19 171 114 / 1);
   --wp--preset--color--secondary: rgba(41 44 44 / 1);
@@ -46,8 +46,8 @@ bg-accent-tertiary*/
   background-color: var(--wp--preset--color--offset);
 }
 
-.color-switcher .selected input[type='radio'][value='accent']:after {
-  background-color: var(--wp--preset--color--accent);
+.color-switcher .selected input[type='radio'][value='accent-quarter']:after {
+  background-color: var(--wp--preset--color--accent-quarter);
 }
 
 .color-switcher .selected input[type='radio'][value='highlight']:after {
@@ -66,8 +66,8 @@ bg-accent-tertiary*/
   background-color: var(--wp--preset--color--offset);
 }
 
-.color-switcher input[type='radio'][value='accent'] {
-  background-color: var(--wp--preset--color--accent);
+.color-switcher input[type='radio'][value='accent-quarter'] {
+  background-color: var(--wp--preset--color--accent-quarter);
 }
 
 .color-switcher input[type='radio'][value='highlight'] {
@@ -216,11 +216,12 @@ li#wp-admin-bar-my-account .ab-item .display-name,
 }
 
 .dashboard-card:not(.settings) {
-  background: var(--wp--preset--color--accent);
+  border: 1px solid currentColor;
 }
 
 .dashboard-card.settings {
   background: var(--wp--preset--color--secondary);
+  grid-column: 1 / -1;
 }
 
 .dashboard-card p {

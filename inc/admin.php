@@ -103,13 +103,13 @@ function blockhaus_dashboard_widget_render() {
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
         </svg>
-        <?php esc_html_e('users' , "blockhaus" );?>
+        <?php esc_html_e('View' , "blockhaus" );?>
       </a>
       <a aria-label="Add new user" href="/wp-admin/user-new.php">
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
         </svg>
-        <?php esc_html_e('User' , "blockhaus" );?>
+        <?php esc_html_e('Add' , "blockhaus" );?>
       </a>
     </div>
   </div>
@@ -145,13 +145,13 @@ if($cpts):
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
         </svg>
-      <?php esc_html_e($cpt->label , "blockhaus" );?>
+      <?php esc_html_e('View' , "blockhaus" );?>
       </a>
       <a aria-label="Add new <?php esc_html_e( $cpt->name , "blockhaus" );?>" href="/wp-admin/post-new.php?post_type=<?php echo $cpt->name;?>">
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
         </svg>
-      <?php esc_html_e($cpt->name , "blockhaus" );?>
+      <?php esc_html_e('Add' , "blockhaus" );?>
     </a>
     </div>
   </div>

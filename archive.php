@@ -102,9 +102,9 @@ the_archive_title( '<h1 class="z-0 text-xl lg:text-gigantic text-current font-bl
 
 		endif;
 		?>
+	
 
 	</div>
-
 	</main><!-- #main -->
 
 <?php
