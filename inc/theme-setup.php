@@ -147,7 +147,8 @@ add_action( 'admin_head', 'blockhaus_fix_svg' );
   function blockhaus_custom_images() {
     add_image_size( 'landscape', 800, 450, array( 'center', 'center' ) ); // adds 800 pixels wide by 450 pixels tall image option, hard crop mode
     add_image_size( 'profile', 300, 300, array( 'center', 'center' ) ); // adds 300 pixels wide by 300 pixels tall image option, hard crop mode
-    add_image_size( 'blog', 500, 300, array( 'center', 'center' ) ); // adds 300 pixels wide by 300 pixels tall image option, hard crop mode
+    add_image_size( 'blog', 500, 300, array( 'center', 'center' ) ); // adds 500 pixels wide by 300 pixels tall image option, hard crop mode
+    add_image_size( 'portrait', 600, 800, array( 'center', 'center' ) ); // adds 500 pixels wide by 300 pixels tall image option, hard crop mode
   }
   
   add_action( 'after_setup_theme', 'blockhaus_custom_images' );
