@@ -245,6 +245,10 @@ iframe {
   @apply col-span-full flex justify-between gap-6 pt-6;
 }
 
+.nav-links {
+  @apply flex w-full;
+}
+
 /* POST NAVIGATION STYLES */
 
 .post-navigation .nav-links {

@@ -1117,6 +1117,11 @@ iframe {
   padding-top: 1.5rem;
 }
 
+.nav-links {
+  display: flex;
+  width: 100%;
+}
+
 /* POST NAVIGATION STYLES */
 
 .post-navigation .nav-links {
