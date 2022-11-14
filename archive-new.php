@@ -24,20 +24,20 @@ $post_type = get_post_type();
 
 		
 
-			<header class="entry-header<?php print($header_image ? ' py-0 ' : ' py-20 lg:py-20 h-auto lgh-80 ');?>grid grid-cols-header-small lg:grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden mt-14 lg:mt-0 gap-y-6">
+			<header class="entry-header flex flex-col gap-6 bg-neutral-dark-100 overflow-hidden py-20">
 
 	<?php 
 
 if ( $header_image ):?>
-<div class="mx-auto lg:mx-0 z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start">
+<div class="w-11/12 mx-auto z-0 text-primary-default">
 <?php 
-the_archive_title( '<h1 class="z-0 text-xl lg:text-gigantic text-current font-black leading-tight">', '</h1>' );?>
+the_archive_title( '<h1 class="z-0 text-xl text-center lg:text-gigantic text-current font-black leading-tight">', '</h1>' );?>
 </div>
 <?php
 	the_post_thumbnail( 'full', ['class' => $contain_image ? 'col-start-3 row-start-1 m-0 hidden lg:block lg:h-80 object-contain p-6' : 'col-span-full w-full row-start-1 h-80 object-cover'] ); ?>
 <?php else:?>
-<div class="mx-auto lg:mx-0 text-primary-default col-start-2 row-start-1 text-current place-self-center justify-self-start">
-<?php the_archive_title( '<h1 class="text-xl lg:text-gigantic z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start font-black leading-tight">', '</h1>' );?>
+<div class="w-11/12 mx-auto text-primary-default text-current">
+<?php the_archive_title( '<h1 class="text-xl text-center lg:text-gigantic z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start font-black leading-tight">', '</h1>' );?>
 
 	</div>
 <?php endif;
@@ -68,11 +68,11 @@ the_archive_title( '<h1 class="z-0 text-xl lg:text-gigantic text-current font-bl
 
 			// Check rows existexists.
 			if( have_rows('articles-and-reviews_page_links', 'options') ):?>
-			<ul class="col-start-2 flex flex-wrap gap-2 lg:gap-6 place-self-center justify-self-start">
+			<ul class="w-11/12 mx-auto flex flex-wrap gap-2 justify-center lg:gap-6">
 			<?php	// Loop through rows.
 				while( have_rows('articles-and-reviews_page_links', 'options') ) : the_row();?>
 
-<li><a class="rounded-full px-3 py-1 bg-accent-default text-primary-default hover:bg-secondary focus:bg-secodnary" href="<?php the_sub_field('page_url');?>"><?php the_sub_field('page_name');?></a></li>
+<li><a class="rounded-full px-3 py-1 bg-accent-default text-primary-default hover:bg-secondary focus:bg-secondary" href="<?php the_sub_field('page_url');?>"><?php the_sub_field('page_name');?></a></li>
 
 				<?php // End loop.
 				endwhile;

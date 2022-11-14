@@ -53,7 +53,7 @@ the_title( '<h1 class="z-0 text-xl lg:text-gigantic text-current font-black lead
 	<p class="entry-meta col-start-2 gap-2 row-start-2 text-primary-default items-center place-self-start flex italic w-full">
 		<?php
 			blockhaus_posted_on();
-			blockhaus_posted_by();
+			// blockhaus_posted_by();
 		?>
 
 	<?php
@@ -83,7 +83,7 @@ if ( has_post_thumbnail() && (get_post_type() !== 'video') ): ?>
 		the_content();
 
 		if ( comments_open() || get_comments_number() ) :
-		echo '<aside class="p-4 lg:p-10 border border-neutral-light-500 rounded-md space-y-6">
+		echo '<aside class="p-4 lg:p-10 border border-neutral-light-500 rounded-md">
 		<h2 class="text-xl">Comments</h2>';
 		comments_template();
 		echo '</aside>';

@@ -25,7 +25,7 @@
 <div id="page-blockhaus" class="h-full flex flex-col">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'blockhaus' ); ?></a>
 
-	<header id="masthead" class="bg-white fixed top-0 left-0 right-0 z-50 p-2 lg:relative flex justify-between lg:p-6 items-center">
+	<header id="masthead" class="bg-primary-default fixed top-0 left-0 right-0 z-50 p-2 lg:relative flex justify-between lg:p-6 items-center">
 		<div class="flex items-center gap-2">
 
 	
@@ -34,7 +34,7 @@
 		
     
 	
-				<span class="has-extra-large-font-size font-black"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+				<span class="has-extra-large-font-size"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
 			
 		</div><!-- .site-branding -->
 

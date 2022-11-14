@@ -22,6 +22,27 @@ body {
   font-family: 'Myriad Pro Regular' !important;
 }
 
+td.featured_article.column-featured_article {
+  text-transform: uppercase;
+  display: inline-flex;
+  width: 2.5rem;
+  margin-block: 0.75rem;
+  margin-left: 0.25rem;
+  align-items: center;
+  justify-content: center;
+}
+
+td.featured_article.column-featured_article span[data-featured='yes'] {
+  background: rgb(87, 255, 221);
+  border-radius: 30px;
+  padding-block: 0.25rem;
+  padding-inline: 0.75rem;
+}
+
+td.featured_article.column-featured_article span[data-featured='no'] {
+  display: none;
+}
+
 .color-switcher .selected input[type='radio']:after {
   content: '';
   display: flex;
@@ -138,6 +159,10 @@ bg-accent-tertiary*/
 
 .toplevel_page_theme-options .wrap.acf-settings-wrap {
   color: var(--wp--preset--color--secondary);
+}
+
+.acf-label.acf-accordion-title {
+  background: whitesmoke;
 }
 
 a.components-button.edit-post-fullscreen-mode-close svg {

@@ -79,7 +79,11 @@ ol.comment-list li a.comment-edit-link {
 }
 
 .comment-respond {
-  @apply my-12 w-full p-6 bg-accent-default text-primary-default rounded-md flex flex-col gap-6;
+  @apply mt-32 mb-12 w-full p-6 bg-primary-default rounded-md flex flex-col gap-6 relative;
+}
+
+.comment-respond:before {
+  @apply bg-neutral-light-500 absolute -top-16 left-0 right-0 h-[1px] content-[''];
 }
 
 form.comment-form,

@@ -38,9 +38,9 @@ $external_link = get_field('external_link');
 		endif;
 		$featured = get_field('featured_article');
 
-		if($featured === 'yes'):
-			echo '<span class="absolute text-sm top-2 right-2 rounded-full px-2 bg-primary-default">FEATURED</span>';
-		endif;
+		// if($featured === 'yes'):
+		// 	echo '<span class="absolute text-sm top-2 right-2 rounded-full px-2 bg-primary-default">FEATURED</span>';
+		// endif;
 
 		if ( 'post' === get_post_type() ) :
 			?>

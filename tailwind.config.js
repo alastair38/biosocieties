@@ -20,6 +20,7 @@ module.exports = {
     'lg:w-4/5',
     'text-base',
     'lg:p-12',
+    'lg:p-20',
   ],
   theme: {
     fontFamily: {
