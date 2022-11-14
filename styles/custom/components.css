@@ -165,7 +165,7 @@ blockquote.blockhaus-quote:after {
 }
 
 iframe {
-  @apply border-[6px] border-white rounded-md mx-auto;
+  @apply border-[6px] border-white rounded-md mx-auto aspect-video w-full h-full;
 }
 
 @media (max-width: 640px) {
@@ -237,6 +237,12 @@ iframe {
 
 .blog article img {
   aspect-ratio: 3/4;
+}
+
+/* ARCHIVE NAVIGATION STYLES */
+
+.navigation.posts-navigation {
+  @apply col-span-full flex justify-between gap-6 pt-6;
 }
 
 /* POST NAVIGATION STYLES */
