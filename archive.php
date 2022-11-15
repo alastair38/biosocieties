@@ -69,7 +69,7 @@ the_archive_title( '<h1 class="z-0 text-xl lg:text-gigantic text-current font-bl
 
 			// Check rows existexists.
 			if( have_rows('articles-and-reviews_page_links', 'options') ):?>
-			<ul class="col-start-2 flex flex-wrap gap-2 lg:gap-6 place-self-center justify-self-start">
+			<ul class="col-start-2 flex flex-wrap gap-2 justify-center lg:justify-start lg:gap-6 place-self-center justify-self-start">
 			<?php	// Loop through rows.
 				while( have_rows('articles-and-reviews_page_links', 'options') ) : the_row();?>
 

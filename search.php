@@ -22,23 +22,34 @@ get_header();
 		endif;
 				
 		?>
+	
+<header class="entry-header<?php print($header_image ? ' py-0 ' : ' py-20 lg:py-20 h-auto lgh-80 ');?>grid grid-cols-header-small lg:grid-cols-header blockhaus-banner-gradient overflow-hidden mt-14 lg:mt-0 gap-y-6">
 
-			<header class="entry-header grid grid-cols-header-mobile md:grid-cols-header relative h-80 has-<?php echo $background;?>-background-color has-background bg-curves bg-fixed bg-cover overflow-hidden">
+<?php 
 
-	<h1 class="leading-none py-3 z-0 mb-6 w-fit col-start-2 row-start-1 place-self-end justify-self-start bg-primary-default text-lg md:text-gigantic px-6 font-black uppercase">
+if ( $header_image ):?>
+<div class="mx-auto lg:mx-0 z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start">
+<h1 class="z-0 text-xl lg:text-gigantic text-current font-black leading-tight">
+	<?php
+	/* translators: %s: search query. */
+	printf( esc_html__( 'Search Results for: %s', 'blockhaus' ), '<span class="underline decoration-accent-secondary decoration-4">' . get_search_query() . '</span>' );
+	?>
+</h1>
+</div>
+<?php
+the_post_thumbnail( 'full', ['class' => $contain_image ? 'col-start-3 row-start-1 m-0 hidden lg:block lg:h-80 object-contain p-6' : 'col-span-full w-full row-start-1 h-80 object-cover'] ); ?>
+<?php else:?>
+<div class="mx-auto lg:mx-0 text-primary-default col-start-2 row-start-1 text-current place-self-center justify-self-start">
+<h1 class="z-0 text-xl lg:text-gigantic text-current font-black leading-tight">
 	<?php
 	/* translators: %s: search query. */
 	printf( esc_html__( 'Search Results for: %s', 'blockhaus' ), '<span class="underline decoration-accent-secondary decoration-4">' . get_search_query() . '</span>' );
 	?>
 </h1>
 
-<?php 
-				if($header_image):
-				if($transparent): ?>
-				<img class="h-80 md:place-self-end col-span-full md:col-start-2 md:col-span-1 row-start-1 object-contain object-right" src="<?php echo $header_image['url'];?>" alt="<?php echo $header_image['alt'];?>">
+</div>
 
-				<?php endif;
-				endif; ?>
+<?php endif;?>
 	</header><!-- .page-header -->
 
 	<div class="p-6 md:p-12 w-11/12 md:w-3/4 mx-auto space-y-6">

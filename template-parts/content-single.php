@@ -13,7 +13,7 @@
 
 	
 
-	<article id="post-<?php the_ID(); ?>" class="w-full space-y-6 md:space-y-12 mt-14 lg:mt-0">
+	<article id="post-<?php the_ID(); ?>" class="w-full space-y-6 md:space-y-12 mt-7 lg:mt-0">
 	
 	<header class="entry-header<?php print($background_image ? ' py-0 ' : ' py-20 lg:py-0 h-auto lg:h-80 ');?>grid grid-cols-header-small lg:grid-cols-header blockhaus-banner-gradient overflow-hidden mt-14 lg:mt-0">
 
