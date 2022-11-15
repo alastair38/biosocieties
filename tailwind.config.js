@@ -21,6 +21,7 @@ module.exports = {
     'text-base',
     'lg:p-12',
     'lg:p-20',
+    'lg:px-32',
   ],
   theme: {
     fontFamily: {

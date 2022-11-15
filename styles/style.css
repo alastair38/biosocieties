@@ -3305,6 +3305,11 @@ figcaption {
     padding-bottom: 1.5rem;
   }
 
+  .lg\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
   .lg\:pt-8 {
     padding-top: 2rem;
   }
