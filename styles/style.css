@@ -1151,15 +1151,7 @@ iframe {
   align-items: center;
   gap: 1rem;
   font-size: var(--wp--preset--font-size--small);
-  color: var(--wp--preset--color--neutral-dark-900);
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.nav-previous a:hover, .nav-next a:hover {
-  --tw-translate-x: 2rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  color: var(--wp--preset--color--accent);
 }
 
 .nav-next a {
@@ -1167,13 +1159,11 @@ iframe {
 }
 
 .nav-next a:hover {
-  --tw-translate-x: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  color: var(--wp--preset--color--secondary);
 }
 
 .nav-previous a:hover {
-  --tw-translate-x: -0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  color: var(--wp--preset--color--secondary);
 }
 
 .nav-next {
@@ -2663,12 +2653,12 @@ input[type='text'], input[type='email'], textarea {
   font-size: var(--wp--preset--font-size--normal);
 }
 
-.text-lg {
-  font-size: var(--wp--preset--font-size--large);
-}
-
 .text-sm {
   font-size: var(--wp--preset--font-size--small);
+}
+
+.text-lg {
+  font-size: var(--wp--preset--font-size--large);
 }
 
 .font-black {

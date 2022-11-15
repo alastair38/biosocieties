@@ -262,15 +262,15 @@ iframe {
 
 .nav-previous a,
 .nav-next a {
-  @apply flex items-center text-neutral-dark-900 hover:translate-x-8 transition-all duration-150 gap-4 text-sm;
+  @apply flex items-center text-accent-default gap-4 text-sm;
 }
 
 .nav-next a {
-  @apply hover:translate-x-2 justify-end;
+  @apply hover:text-secondary justify-end;
 }
 
 .nav-previous a {
-  @apply hover:-translate-x-2;
+  @apply hover:text-secondary;
 }
 
 .nav-next {
