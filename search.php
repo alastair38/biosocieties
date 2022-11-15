@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="main-content space-y-6 md:space-y-12 mb-12">
+	<main id="primary" class="main-content space-y-6 md:space-y-12 bg-neutral-light-100">
 
 		<?php if ( have_posts() ) : 
 		
@@ -41,7 +41,7 @@ get_header();
 				endif; ?>
 	</header><!-- .page-header -->
 
-	<div class="p-6 md:p-12 w-11/12 md:w-3/4 bg-primary-default rounded-md mx-auto space-y-6">
+	<div class="p-6 md:p-12 w-11/12 md:w-3/4 mx-auto space-y-6">
 
 			<?php
 			/* Start the Loop */

@@ -44,15 +44,15 @@
 		
 			echo '<div class="flex flex-col gap-6 items-center justify-center mt-6">
 			<p>Hi, ' . $current_user->display_name . '</p>
-			<a class="bg-offset py-1 px-2 border border-current shadow-retro" href="' . esc_url( wp_logout_url() ) . '">Logout</a></div>';
+			<a class="bg-accent-default text-primary-default py-1 px-2 border border-current shadow-md rounded-full" href="' . esc_url( wp_logout_url() ) . '">Logout</a></div>';
 		}
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blockhaus' ),
-				'after'  => '</div>',
-			)
-		);
+		// wp_link_pages(
+		// 	array(
+		// 		'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blockhaus' ),
+		// 		'after'  => '</div>',
+		// 	)
+		// );
 		?>
 		</div>
 	</div><!-- .entry-content -->

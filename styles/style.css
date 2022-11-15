@@ -2060,10 +2060,6 @@ input[type='text'], input[type='email'], textarea {
   margin-left: auto;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -2136,6 +2132,10 @@ input[type='text'], input[type='email'], textarea {
   height: 0px;
 }
 
+.max-h-\[70vh\] {
+  max-height: 70vh;
+}
+
 .w-4\/5 {
   width: 80%;
 }
@@ -2177,12 +2177,12 @@ input[type='text'], input[type='email'], textarea {
   width: 20rem;
 }
 
-.w-32 {
-  width: 8rem;
-}
-
 .w-1\/3 {
   width: 33.333333%;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .min-w-fit {
@@ -2236,14 +2236,6 @@ input[type='text'], input[type='email'], textarea {
 
 .grid-cols-header-small {
   grid-template-columns: auto 91.6667% auto;
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-cols-header {
-  grid-template-columns: 16.5% 1fr 16.5%;
 }
 
 .flex-row {
@@ -2324,12 +2316,6 @@ input[type='text'], input[type='email'], textarea {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-
-.space-y-12 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(3rem * var(--tw-space-y-reverse));
 }
 
 .place-self-start {
@@ -2451,21 +2437,8 @@ input[type='text'], input[type='email'], textarea {
   background-color: var(--wp--preset--color--highlight);
 }
 
-.bg-gradient-to-t {
-  background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
 .bg-curves {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='visual' viewBox='0 0 900 600' width='900' height='600'%3E%3Cpath d='M584 600L596 550C608 500 632 400 588.5 300C545 200 434 100 378.5 50L323 0L900 0L900 50C900 100 900 200 900 300C900 400 900 500 900 550L900 600Z' fill='%23bfbfbf40'%3E%3C/path%3E%3Cpath d='M251 600L303.5 550C356 500 461 400 455 300C449 200 332 100 273.5 50L215 0L324 0L379.5 50C435 100 546 200 589.5 300C633 400 609 500 597 550L585 600Z' fill='%23ffffff50'%3E%3C/path%3E%3Cpath d='M0 600L0 550C0 500 0 400 0 300C0 200 0 100 0 50L0 0L216 0L274.5 50C333 100 450 200 456 300C462 400 357 500 304.5 550L252 600Z' fill='%23cccbcb3b'%3E%3C/path%3E%3C/svg%3E");
-}
-
-.from-accent-default {
-  --tw-gradient-from: var(--wp--preset--color--accent);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
-}
-
-.to-slate-900 {
-  --tw-gradient-to: #0f172a;
 }
 
 .bg-cover {
@@ -2993,18 +2966,6 @@ figcaption {
     overflow: visible;
     clip: auto;
     white-space: normal;
-  }
-
-  .md\:left-auto {
-    left: auto;
-  }
-
-  .md\:right-6 {
-    right: 1.5rem;
-  }
-
-  .md\:bottom-6 {
-    bottom: 1.5rem;
   }
 
   .md\:col-span-2 {
