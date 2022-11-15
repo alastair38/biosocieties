@@ -2578,11 +2578,6 @@ input[type='text'], input[type='email'], textarea {
   padding-right: 0.75rem;
 }
 
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -3264,16 +3259,16 @@ figcaption {
     background-color: var(--wp--preset--color--primary-default);
   }
 
-  .lg\:p-12 {
-    padding: 3rem;
-  }
-
   .lg\:p-6 {
     padding: 1.5rem;
   }
 
   .lg\:p-10 {
     padding: 2.5rem;
+  }
+
+  .lg\:p-12 {
+    padding: 3rem;
   }
 
   .lg\:p-20 {
