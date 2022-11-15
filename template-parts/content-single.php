@@ -16,7 +16,7 @@
 
 	<article id="post-<?php the_ID(); ?>" class="w-full space-y-6 md:space-y-12 mt-14 lg:mt-0">
 	
-	<header class="entry-header py-20 grid grid-cols-header-small lg:grid-cols-header bg-gradient-to-t from-accent-default to-slate-900 overflow-hidden">
+	<header class="entry-header py-20 grid grid-cols-header-small lg:grid-cols-header blockhaus-banner-gradient overflow-hidden">
 
 	<?php 
 
