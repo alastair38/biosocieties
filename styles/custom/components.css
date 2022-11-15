@@ -246,22 +246,27 @@ iframe {
 }
 
 .nav-links {
-  @apply flex w-full;
+  @apply flex w-full gap-12;
 }
 
 /* POST NAVIGATION STYLES */
 
 .post-navigation .nav-links {
-  @apply w-11/12 md:w-3/4 mx-auto my-8 flex justify-between;
+  @apply w-11/12 md:w-3/4 mx-auto my-8 flex justify-between items-center;
+}
+
+.nav-previous,
+.nav-next {
+  @apply flex-1;
 }
 
 .nav-previous a,
 .nav-next a {
-  @apply flex items-center text-neutral-dark-900 hover:translate-x-8 transition-all duration-150;
+  @apply flex items-center text-neutral-dark-900 hover:translate-x-8 transition-all duration-150 gap-4 text-sm;
 }
 
 .nav-next a {
-  @apply hover:translate-x-2;
+  @apply hover:translate-x-2 justify-end;
 }
 
 .nav-previous a {

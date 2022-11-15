@@ -1120,6 +1120,7 @@ iframe {
 .nav-links {
   display: flex;
   width: 100%;
+  gap: 3rem;
 }
 
 /* POST NAVIGATION STYLES */
@@ -1131,6 +1132,7 @@ iframe {
   margin-bottom: 2rem;
   display: flex;
   width: 91.666667%;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -1140,9 +1142,15 @@ iframe {
   }
 }
 
+.nav-previous, .nav-next {
+  flex: 1 1 0%;
+}
+
 .nav-previous a, .nav-next a {
   display: flex;
   align-items: center;
+  gap: 1rem;
+  font-size: var(--wp--preset--font-size--small);
   color: var(--wp--preset--color--neutral-dark-900);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1152,6 +1160,10 @@ iframe {
 .nav-previous a:hover, .nav-next a:hover {
   --tw-translate-x: 2rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.nav-next a {
+  justify-content: flex-end;
 }
 
 .nav-next a:hover {
@@ -2987,6 +2999,17 @@ figcaption {
 }
 
 @media (min-width: 768px) {
+  .md\:not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
   .md\:left-auto {
     left: auto;
   }

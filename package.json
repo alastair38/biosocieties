@@ -46,6 +46,7 @@
     "production": "tailwindcss -i ./styles/tailwind.css -o ./styles/style.css --postcss --minify"
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.5.2"
+    "@tailwindcss/forms": "^0.5.2",
+    "@tailwindcss/line-clamp": "^0.4.2"
   }
 }
