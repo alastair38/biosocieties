@@ -16,14 +16,14 @@ $articles = get_posts(array(
 	
 			<aside class="bg-neutral-dark-100 py-6 ">
 				<h2 class="w-11/12 mx-auto text-xl font-black text-primary-default">Featured</h2>
-			<div class="grid gap-6 my-6 w-11/12  mx-auto grid-cols-1 md:grid-cols-5">
+			<div class="grid gap-6 my-6 w-11/12 pb-4 md:pb-0 scroll-px-4 overflow-x-auto mx-auto grid-flow-col auto-cols-[60%] md:auto-cols-auto md:grid-cols-5 overscroll-contain snap-x">
 	
 		 <?php foreach($articles as $item):
 			$external_link = get_field('external_link', $item->ID);
 			?>
 			
 				
-				<div class="relative flex rounded-md overflow-hidden shadow-md">
+				<div class="relative flex rounded-md snap-center overflow-hidden shadow-md">
 					<a class="w-full text-sm flex" href="
 					<?php if($external_link) {
 					echo esc_url( $external_link );
