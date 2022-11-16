@@ -147,7 +147,7 @@ the_archive_title( '<h1 class="z-0 text-xl text-center lg:text-gigantic text-cur
 			// 	 * If you want to override this in a child theme, then include a file
 			// 	 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 			// 	 */
-			get_template_part( 'template-parts/content', get_post_type() );
+			get_template_part( 'layouts/content', get_post_type() );
 
 			endwhile;
 
@@ -155,7 +155,7 @@ the_archive_title( '<h1 class="z-0 text-xl text-center lg:text-gigantic text-cur
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'layouts/content', 'none' );
 
 		endif;
 		?>

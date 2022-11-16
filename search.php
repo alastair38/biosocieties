@@ -64,7 +64,7 @@ the_post_thumbnail( 'full', ['class' => $contain_image ? 'col-start-3 row-start-
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'layouts/content', 'search' );
 
 			endwhile;
 
@@ -72,7 +72,7 @@ the_post_thumbnail( 'full', ['class' => $contain_image ? 'col-start-3 row-start-
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'layouts/content', 'none' );
 
 		endif;
 		?>

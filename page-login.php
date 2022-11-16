@@ -15,7 +15,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'login' );
+			get_template_part( 'layouts/content', 'login' );
 
 		endwhile; // End of the loop.
 		?>
