@@ -2021,6 +2021,10 @@ input[type='text'], input[type='email'], textarea {
   float: left;
 }
 
+.clear-both {
+  clear: both;
+}
+
 .m-0 {
   margin: 0px;
 }

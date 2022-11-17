@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="blockhaus-social-share p-6 flex items-center justify-center gap-4 bg-gray-100 rounded-md">
+<div class="blockhaus-social-share p-6 flex items-center justify-center gap-4 clear-both rounded-md">
 
 <p class="sr-only">Share this</p>
 

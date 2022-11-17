@@ -44,7 +44,7 @@ if ( has_post_thumbnail() && $header_image ):?>
 		the_post_thumbnail( 'full', ['class' => 'col-span-full w-full row-start-1 h-80 object-cover'] ); ?>
 	<?php else:?>
 
-	<div class="text-primary-default col-start-2 row-start-1 text-current place-self-center justify-self-start">
+	<div class="text-primary-default w-full col-start-2 row-start-1 text-current place-self-center justify-self-start">
 	<?php the_title( '<h1 class="text-xl lg:text-gigantic z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start font-black leading-tight">', '</h1>' );?>
 
 		<p class="entry-meta col-start-2 gap-2 row-start-2 text-primary-default items-center place-self-start flex italic w-full">
