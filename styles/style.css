@@ -2694,6 +2694,10 @@ input[type='text'], input[type='email'], textarea {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-neutral-dark-100 {
+  color: var(--wp--preset--color--neutral-dark-100);
+}
+
 .text-neutral-light-100 {
   color: var(--wp--preset--color--neutral-light-100);
 }
