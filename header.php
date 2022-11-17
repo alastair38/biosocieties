@@ -29,8 +29,7 @@
 		<div class="flex items-center gap-2">
 
 	
-<!-- 		
-			<img src="<?php echo get_template_directory_uri() . '\assets\images\logo\logo.png'?>" alt="" class="h-10"> -->
+<img src="<?php echo get_template_directory_uri() . '\assets\images\logo\logo.jpg'?>" alt="" class="h-12">
 		
     
 	

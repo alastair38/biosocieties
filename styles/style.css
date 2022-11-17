@@ -2120,6 +2120,10 @@ input[type='text'], input[type='email'], textarea {
   height: 20rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-10 {
   height: 2.5rem;
 }
