@@ -32,7 +32,7 @@ $articles = get_posts(array(
 					">
 					<?php echo get_the_post_thumbnail($item->ID, 'large', array( 'class' => 'w-full' ));?>
 					
-					 <span class="absolute bottom-2 left-2 right-2 bg-accent-default text-primary-default rounded-md px-1 py-1 lg:py-2 lg:px-2" > <?php echo get_the_title($item->ID);?></span>
+					 <span class="absolute bottom-0 left-0 right-0 bg-accent-default text-primary-default px-1 py-1 lg:py-2 lg:px-2" > <?php echo get_the_title($item->ID);?></span>
 					</a>
 					
 				</div>
