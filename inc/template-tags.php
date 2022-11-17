@@ -11,7 +11,7 @@ if ( ! function_exists( 'blockhaus_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function blockhaus_posted_on() {
+	function blockhaus_posted_on($classes = null) {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
@@ -22,18 +22,18 @@ if ( ! function_exists( 'blockhaus_posted_on' ) ) :
 		$time_string = sprintf(
 			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+			esc_html( get_the_date('F, Y') ),
+			// esc_attr( get_the_modified_date( DATE_W3C ) ),
+			// esc_html( get_the_modified_date() )
 		);
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'blockhaus' ),
+			esc_html_x( '%s', 'post date', 'blockhaus' ),
 			 $time_string
 		);
 
-		echo '<span class="posted-on italic">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="' . $classes . '">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -42,14 +42,14 @@ if ( ! function_exists( 'blockhaus_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function blockhaus_posted_by() {
+	function blockhaus_posted_by($classes, $id = null) {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'blockhaus' ),
-			'<span class="author vcard">' . esc_html( get_the_author() ) . '</span>'
+			esc_html_x( '%s', 'post author', 'blockhaus' ),
+			esc_html( get_the_author_meta('display_name', $id) )
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="' . $classes . '">' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;

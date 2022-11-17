@@ -30,7 +30,11 @@ if ( has_post_thumbnail() && (get_post_type() !== 'video') ): ?>
 
 <?php endif;
 
-		the_content();
+		the_content();?>
+
+		<p class="flex gap-1"><?php blockhaus_posted_by("font-black after:content-[',']");?><?php blockhaus_posted_on();?></p>
+
+		<?php 
 
 		if ( comments_open() || get_comments_number() ) :
 		echo '<aside class="p-4 lg:p-10 border border-neutral-light-500 rounded-md">

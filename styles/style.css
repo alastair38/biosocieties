@@ -2811,6 +2811,11 @@ figcaption {
   color: currentColor;
 }
 
+.after\:content-\[\'\2c \'\]::after {
+  --tw-content: ',';
+  content: var(--tw-content);
+}
+
 .focus-within\:border-secondary:focus-within {
   border-color: var(--wp--preset--color--secondary);
 }

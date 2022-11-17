@@ -29,13 +29,14 @@ $external_link = get_field('external_link');
 		echo esc_url( $external_link );
 		} else {
 			echo esc_url( get_permalink() );
-			}?> " class="entry-header absolute bg-primary-default p-2 bottom-2 right-2 left-2">
+			}?>" class="entry-header absolute bg-primary-default p-2 bottom-2 right-2 left-2">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="text-base font-bold">', '</h2>' );
 		endif;
+
 		$featured = get_field('featured_article');
 
 		// if($featured === 'yes'):
