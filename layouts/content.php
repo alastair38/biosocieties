@@ -9,13 +9,15 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="overflow-hidden relative bg-primary-default flex <?php print (get_post_type() === 'journal_editions') ? ' flex-row items-center' : ' flex-col justify-between';?> gap-2 rounded-md shadow-md">
+<article id="post-<?php the_ID(); ?>" class="overflow-hidden relative bg-primary-default flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? ' flex-row items-center' : ' flex-col justify-between';?> gap-2 rounded-md shadow-md">
 <?php 
 if(('video' === get_post_type())):
 	blockhaus_post_thumbnail('full', 'aspect-video object-top'); 
 elseif(('journal_editions' === get_post_type())):?>
 	<img src="<?php echo get_template_directory_uri() . '\assets\images\defaults\biosocieties-covers.png'?>" alt="" class="w-32 object-contain aspect-square p-2 bg-accent-default">
-<?php else: 
+<?php elseif(is_author()):
+	blockhaus_post_thumbnail('medium', 'aspect-square object-top'); 
+else: 
 	blockhaus_post_thumbnail('full', 'aspect-square object-top'); 
 endif;
 
