@@ -2092,6 +2092,10 @@ input[type='text'], input[type='email'], textarea {
   display: inline-flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
 }
@@ -3286,6 +3290,11 @@ figcaption {
   .lg\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .lg\:px-2 {

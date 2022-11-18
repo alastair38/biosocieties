@@ -361,3 +361,16 @@ li#wp-admin-bar-my-account .ab-item .display-name,
 #wpbody-content #dashboard-widgets .postbox-container {
   width: 100% !important;
 }
+
+.acf-profile-label label {
+  font-size: 1.3em !important;
+  margin: 1em 0 0 0 !important;
+}
+
+#acf-form-data + .form-table {
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-collapse: unset;
+  margin-top: 3rem !important;
+}

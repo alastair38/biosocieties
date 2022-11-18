@@ -180,4 +180,43 @@ function blockhaus_admin_bar_remove_logo() {
 }
 add_action( 'wp_before_admin_bar_render', 'blockhaus_admin_bar_remove_logo', 0 );
 
-  
+add_action( 'personal_options', array ( 'T5_Hide_Profile_Bio_Box', 'start' ) );
+
+/**
+ * Captures the part with the biobox in an output buffer and removes it.
+ */
+class T5_Hide_Profile_Bio_Box
+{
+    /**
+     * Called on 'personal_options'.
+     *
+     * @return void
+     */
+    public static function start()
+    {
+        $action = ( IS_PROFILE_PAGE ? 'show' : 'edit' ) . '_user_profile';
+        add_action( $action, array ( __CLASS__, 'stop' ) );
+        ob_start();
+    }
+
+    /**
+     * Strips the bio box from the buffered content.
+     *
+     * @return void
+     */
+    public static function stop()
+    {
+        $html = ob_get_contents();
+        ob_end_clean();
+
+        // remove the headline
+        $headline = __( IS_PROFILE_PAGE ? 'About Yourself' : 'About the user' );
+        $html = str_replace( '<h2>' . $headline . '</h2>', '', $html );
+
+        // remove the table row
+        $html = preg_replace( '~<tr class="user-description-wrap">\s*.*</tr>~imsUu', '', $html );
+        $html = preg_replace( '~<tr class="user-profile-picture">\s*.*</tr>~imsUu', '', $html );
+        $html = preg_replace('~<div id="application-passwords-section">(.*?)</div>~imsUu', '', $html);
+        print $html;
+    }
+}
