@@ -2476,8 +2476,8 @@ input[type='text'], input[type='email'], textarea {
   background-color: var(--wp--preset--color--accent);
 }
 
-.bg-accent-tertiary {
-  background-color: var(--wp--preset--color--accent-tertiary);
+.bg-dark-opacity {
+  background-color: var(--wp--preset--color--dark-opacity);
 }
 
 .bg-neutral-light-500 {
@@ -2729,10 +2729,6 @@ input[type='text'], input[type='email'], textarea {
 
 .text-neutral-dark-100 {
   color: var(--wp--preset--color--neutral-dark-100);
-}
-
-.text-neutral-dark-900 {
-  color: var(--wp--preset--color--neutral-dark-900);
 }
 
 .text-neutral-light-100 {

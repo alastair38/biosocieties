@@ -52,6 +52,7 @@ module.exports = {
         },
         highlight: 'var(--wp--preset--color--highlight)',
         'light-opacity': 'var(--wp--preset--color--light-opacity)',
+        'dark-opacity': 'var(--wp--preset--color--dark-opacity)',
         neutral: {
           light: {
             100: 'var(--wp--preset--color--neutral-light-100)',

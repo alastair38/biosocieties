@@ -45,6 +45,11 @@
           "name": "Light with Opacity"
         },
         {
+          "slug": "dark-opacity",
+          "color": "rgba(0 0 0 / .75)",
+          "name": "Dark with Opacity"
+        },
+        {
           "slug": "neutral-light-900",
           "color": "rgba(200 200 200 / 1)",
           "name": "Neutral Light (900)"
