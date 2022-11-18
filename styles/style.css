@@ -2152,6 +2152,10 @@ input[type='text'], input[type='email'], textarea {
   max-height: 70vh;
 }
 
+.min-h-\[9rem\] {
+  min-height: 9rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -2472,6 +2476,10 @@ input[type='text'], input[type='email'], textarea {
   background-color: var(--wp--preset--color--accent);
 }
 
+.bg-accent-tertiary {
+  background-color: var(--wp--preset--color--accent-tertiary);
+}
+
 .bg-neutral-light-500 {
   background-color: var(--wp--preset--color--neutral-light-500);
 }
@@ -2721,6 +2729,10 @@ input[type='text'], input[type='email'], textarea {
 
 .text-neutral-dark-100 {
   color: var(--wp--preset--color--neutral-dark-100);
+}
+
+.text-neutral-dark-900 {
+  color: var(--wp--preset--color--neutral-dark-900);
 }
 
 .text-neutral-light-100 {
@@ -3193,6 +3205,10 @@ figcaption {
 
   .lg\:h-auto {
     height: auto;
+  }
+
+  .lg\:min-h-\[7rem\] {
+    min-height: 7rem;
   }
 
   .lg\:w-1\/4 {

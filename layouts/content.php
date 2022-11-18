@@ -25,7 +25,7 @@ $external_link = get_field('external_link');
 
 
 ?>
-	<a class="flex flex-col gap-2 p-3" href="<?php 
+	<a class="flex items-center min-h-[9rem] gap-2 p-3" href="<?php 
 	
 	if($external_link) {
 		echo esc_url( $external_link );
@@ -36,7 +36,7 @@ $external_link = get_field('external_link');
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="text-base font-bold">', '</h2>' );
+			the_title( '<h2 class="text-base">', '</h2>' );
 		endif;
 
 		$featured = get_field('featured_article');
