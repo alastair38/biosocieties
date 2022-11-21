@@ -25,7 +25,7 @@ $external_link = get_field('external_link');
 
 
 ?>
-	<a class="flex items-center min-h-[9rem] gap-2 p-3" href="<?php 
+	<a class="flex flex-col justify-center min-h-[9rem] gap-2 p-3" href="<?php 
 	
 	if($external_link) {
 		echo esc_url( $external_link );

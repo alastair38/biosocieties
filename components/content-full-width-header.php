@@ -23,7 +23,7 @@ endif;
 
 ?>
 
-<header class="entry-header<?php print($header_image ? ' py-0 ' : ' py-20lg:py-20 h-80 ');?>grid grid-cols-header-small lg:grid-cols-header blockhaus-banner-gradient overflow-hidden mt-14 lg:mt-0 gap-y-6">
+<header class="entry-header<?php print($header_image ? ' py-0 ' : ' h-48 lg:h-80 ');?>grid grid-cols-header-small lg:grid-cols-header blockhaus-banner-gradient overflow-hidden mt-14 lg:mt-0 gap-y-6">
 
 	<?php if ( $header_image ):?>
 

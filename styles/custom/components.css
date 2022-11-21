@@ -9,6 +9,16 @@
   );
 }
 
+.blockhaus-banner-gradient-alt {
+  background-color: #9f0e0f;
+  background-image: linear-gradient(
+    180deg,
+    #9f0e0f 0%,
+    #991c30 61%,
+    #7a2020 100%
+  );
+}
+
 .blockhaus-gallery
   .wp-block-gallery.has-nested-images
   figure.wp-block-image

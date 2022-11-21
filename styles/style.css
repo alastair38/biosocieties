@@ -773,6 +773,16 @@ main {
   );
 }
 
+.blockhaus-banner-gradient-alt {
+  background-color: #9f0e0f;
+  background-image: linear-gradient(
+    180deg,
+    #9f0e0f 0%,
+    #991c30 61%,
+    #7a2020 100%
+  );
+}
+
 .blockhaus-gallery
   .wp-block-gallery.has-nested-images
   figure.wp-block-image
@@ -2144,6 +2154,10 @@ input[type='text'], input[type='email'], textarea {
   height: auto;
 }
 
+.h-48 {
+  height: 12rem;
+}
+
 .h-0 {
   height: 0px;
 }
@@ -2476,16 +2490,16 @@ input[type='text'], input[type='email'], textarea {
   background-color: var(--wp--preset--color--accent);
 }
 
+.bg-neutral-dark-900 {
+  background-color: var(--wp--preset--color--neutral-dark-900);
+}
+
 .bg-dark-opacity {
   background-color: var(--wp--preset--color--dark-opacity);
 }
 
 .bg-neutral-light-500 {
   background-color: var(--wp--preset--color--neutral-light-500);
-}
-
-.bg-neutral-dark-900 {
-  background-color: var(--wp--preset--color--neutral-dark-900);
 }
 
 .bg-highlight {
@@ -2868,6 +2882,10 @@ figcaption {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-neutral-dark-100:hover {
+  background-color: var(--wp--preset--color--neutral-dark-100);
+}
+
 .hover\:bg-green-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(134 239 172 / var(--tw-bg-opacity));
@@ -2912,6 +2930,10 @@ figcaption {
 
 .focus\:bg-secondary:focus {
   background-color: var(--wp--preset--color--secondary);
+}
+
+.focus\:bg-neutral-dark-100:focus {
+  background-color: var(--wp--preset--color--neutral-dark-100);
 }
 
 .focus\:bg-neutral-light-500:focus {
