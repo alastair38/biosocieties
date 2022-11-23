@@ -128,8 +128,6 @@ if ( have_posts() ) :?>
 
 		else :
 
-			get_template_part( 'layouts/content', 'none' );
-
 		endif;
 		?>
 		</div>
