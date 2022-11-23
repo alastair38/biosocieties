@@ -115,12 +115,13 @@ if ( ! function_exists( 'blockhaus_post_thumbnail' ) ) :
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
+				<figure class="<?php echo $classes;?>">
 
 				<?php
 					the_post_thumbnail(
 						$size,
 						array(
-							'class' => $classes . ' object-cover',
+							'class' => 'h-full w-full object-cover object-top',
 							'alt' => the_title_attribute(
 								array(
 									
@@ -130,6 +131,7 @@ if ( ! function_exists( 'blockhaus_post_thumbnail' ) ) :
 						)
 					);
 				?>
+				</figure>
 
 			<?php
 		endif; // End is_singular().

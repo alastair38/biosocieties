@@ -16,9 +16,9 @@ if(('video' === get_post_type())):
 elseif(('journal_editions' === get_post_type())):?>
 	<img src="<?php echo get_template_directory_uri() . '\assets\images\defaults\biosocieties-covers.png'?>" alt="" class="w-32 object-contain aspect-square p-2 bg-accent-default">
 <?php elseif(is_author()):
-	blockhaus_post_thumbnail('medium', 'aspect-square object-top'); 
+	blockhaus_post_thumbnail('medium', 'aspect-square flex h-full w-1/5'); 
 else: 
-	blockhaus_post_thumbnail('full', 'aspect-square object-top'); 
+	blockhaus_post_thumbnail('full', 'aspect-square flex h-full w-1/5'); 
 endif;
 
 $external_link = get_field('external_link');

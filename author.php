@@ -58,13 +58,31 @@ $links = get_field('profile_links', 'user_' . $curauth->ID);
 					<?php endif;
 					
 					if( have_rows('links', 'user_' . $curauth->ID) ): ?>
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 border rounded-md p-6">
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 border rounded-md p-6">
 						<h2 class="col-span-full font-bold w-full">Interviews and recent articles</h2>
 				
 				
-						<?php while( have_rows('links', 'user_' . $curauth->ID) ): the_row(); ?>
+						<?php while( have_rows('links', 'user_' . $curauth->ID) ): the_row(); 
+						$image = get_sub_field('link_image');
+						?>
 				
-								<article class=""><a class="bg-primary-default p-6 h-full flex items-center rounded-md shadow-md" href="<?php the_sub_field('ank_url'); ?>"><?php the_sub_field('link_text'); ?></a></article>
+								<article >
+									<a class="bg-primary-default overflow-hidden h-full flex flexcol gap-2 items-center rounded-md shadow-md" href="<?php the_sub_field('link_url'); ?>">
+									<figure class="aspect-square flex h-full w-1/4">
+									<?php if($image):?>
+										<img class="h-full" src="<?php echo $image['url']?>"/>
+									<?php else:?>
+										<img class="h-full" src="<?php echo get_template_directory_uri() . '\assets\images\defaults\square_bw.jpg'?>"/>
+									<?php endif;?>
+									</figure>
+								
+								<div class="flex flex-col gap-1 text-sm p-2">
+								<span><?php the_sub_field('link_text'); ?></span>
+								<span class="italic"><?php the_sub_field('link_publication'); ?></span>
+								</div>
+								</a>
+								
+								</article>
 				
 						<?php endwhile; ?>
 				
@@ -83,7 +101,7 @@ $links = get_field('profile_links', 'user_' . $curauth->ID);
 
 if ( have_posts() ) :?>
 			<div class="grid grid-cols-1 gap-6 py-12">
-			<h2 class="col-span-full text-xl font-black">Website articles</h2>
+			<h2 class="col-span-full text-xl font-black">BioSocieties website articles</h2>
 			<?php while ( have_posts() ) :
 				the_post();
 
