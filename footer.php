@@ -18,7 +18,7 @@
 <div class="flex justify-center">
 
 <div class="p-6 flex items-center gap-6">
-	<p class="font-black">Follow us</p>
+	<p class="font-black">Follow us on</p>
   <?php echo blockhaus_display_social_profiles();?>
 </div>
 

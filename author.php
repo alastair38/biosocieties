@@ -59,7 +59,7 @@ $links = get_field('profile_links', 'user_' . $curauth->ID);
 					
 					if( have_rows('links', 'user_' . $curauth->ID) ): ?>
 					<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 border rounded-md p-6">
-						<h2 class="col-span-full font-bold w-full">Interviews and recent articles</h2>
+						<h2 class="col-span-full font-bold w-full">Interviews and recent publications</h2>
 				
 				
 						<?php while( have_rows('links', 'user_' . $curauth->ID) ): the_row(); 

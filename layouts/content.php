@@ -36,7 +36,7 @@ $external_link = get_field('external_link');
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="text-base">', '</h2>' );
+			echo '<h2 class="text-base">Blog: ' . get_the_title() . '</h2>';
 		endif;
 
 		$featured = get_field('featured_article');
