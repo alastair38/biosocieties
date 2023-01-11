@@ -46,6 +46,16 @@ $external_link = get_field('external_link');
 		// if($featured === 'yes'):
 		// 	echo '<span class="absolute text-sm top-2 right-2 rounded-full px-2 bg-primary-default">FEATURED</span>';
 		// endif;
+		
+		if ( ('journal_editions' === get_post_type()) && has_excerpt() ) :
+			?>
+			<span class="entry-meta text-sm italic">
+				<?php
+				the_excerpt();
+			
+				?>
+			</span><!-- .entry-meta -->
+		<?php endif;
 
 		if ( 'post' === get_post_type() ) :
 			?>
