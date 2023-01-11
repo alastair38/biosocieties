@@ -104,7 +104,7 @@ function blockhaus_opengraph() {
     <meta name="twitter:url" content="<?php echo the_permalink(); ?>" />
     <meta name="twitter:title" content="<?php echo the_title(); ?>" />
     <meta name="twitter:description" content="<?php echo $excerpt; ?>" />
-    <meta name="twitter:image" content="<?php echo $img_src[0]; ?>" />
+    <meta name="twitter:image" content="<?php echo $img; ?>" />
     <?php
     } else {
     return;
