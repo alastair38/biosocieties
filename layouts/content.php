@@ -6,11 +6,21 @@
  *
  * @package blockhaus
  */
-
+$external_link = get_field('external_link');
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="overflow-hidden relative bg-primary-default flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? ' flex-row items-center' : ' flex-col justify-between';?> gap-2 rounded-md shadow-md">
-<?php 
+<article id="post-<?php the_ID(); ?>" class="relative bg-primary-default flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row items-center' : 'flex-col justify-between';?> gap-2 rounded-md shadow-md">
+
+
+	<a class="hover:ring-2 hover:ring-yellow-400 overflow-hidden w-full rounded-md flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row' : 'flex-col';?>" href="<?php 
+	
+	if($external_link) {
+		echo esc_url( $external_link );
+		} else {
+			echo esc_url( get_permalink() );
+			}?>" class="entry-header absolute bg-primary-default p-2 bottom-2 right-2 left-2">
+			
+			<?php 
 if(('video' === get_post_type())):
 	blockhaus_post_thumbnail('full', 'aspect-video object-top'); 
 elseif(('journal_editions' === get_post_type())):?>
@@ -18,20 +28,11 @@ elseif(('journal_editions' === get_post_type())):?>
 <?php elseif(is_author()):
 	blockhaus_post_thumbnail('medium', 'aspect-square flex h-full w-1/5'); 
 else: 
-	blockhaus_post_thumbnail('full', 'aspect-square flex h-full'); 
+	blockhaus_post_thumbnail('blog', 'flex w-full object-fit'); 
 endif;
 
-$external_link = get_field('external_link');
-
-
 ?>
-	<a class="flex flex-col justify-center min-h-[9rem] gap-2 p-3" href="<?php 
-	
-	if($external_link) {
-		echo esc_url( $external_link );
-		} else {
-			echo esc_url( get_permalink() );
-			}?>" class="entry-header absolute bg-primary-default p-2 bottom-2 right-2 left-2">
+	<div class="flex flex-col justify-center  gap-2 p-3">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -66,6 +67,7 @@ $external_link = get_field('external_link');
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
+		</div>
 		</a><!-- .entry-header -->
 
 	
