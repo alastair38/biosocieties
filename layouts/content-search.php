@@ -9,7 +9,7 @@
 
 $post_type = get_post_type();
 $post_type_obj = get_post_type_object( $post_type );
-
+$external_link = get_field('external_link');
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="space-y-6">
@@ -24,6 +24,7 @@ $post_type_obj = get_post_type_object( $post_type );
 		<?php the_title(sprintf( '<h2 class="has-large-font-size">', '%s' ), '</h2>');
  		?>
 
+		<?php if ( 'post' === get_post_type() ) :?>
 		<div class="entry-meta flex gap-2">
 		
 			<?php
@@ -33,17 +34,25 @@ $post_type_obj = get_post_type_object( $post_type );
 
 
 		</div><!-- .entry-meta -->
-		
+		<?php endif;?>
 	</header><!-- .entry-header -->
 
+	<?php if(has_excerpt()):?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 
-		<a class="py-1 px-4 border border-current inline-flex mt-6 rounded-full hover:bg-primary-default transition-colors duration-200 hover:ring-4 hover:ring-offset focus:ring-4 focus:ring-offset" aria-label="<?php the_title();?>" href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">View <?php echo $post_type_obj->labels->name;?></a>
 	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer flex justify-between">
+	<?php endif;?>
+	
+	<footer class="entry-footer">
 		
+	<a class="py-1 px-4 border border-current inline-flex rounded-full hover:bg-primary-default transition-colors duration-200 hover:ring-4 hover:ring-offset focus:ring-4 focus:ring-offset" aria-label="<?php the_title();?>" href="<?php 
+	
+	if($external_link) {
+		echo esc_url( $external_link );
+		} else {
+			echo esc_url( get_permalink() );
+			}?>" rel="bookmark">View <?php echo $post_type_obj->labels->singular_name;?></a>
 	</footer><!-- .entry-footer -->
 	<hr>
 </article><!-- #post-<?php the_ID(); ?> -->
