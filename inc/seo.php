@@ -82,14 +82,16 @@ function blockhaus_opengraph() {
     $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large');
     $img = $img_src[0];
     } else {
-    $default_img = get_field(get_post_type() . '_header', 'options');
-    $img = $default_img['url'];
+    $default_img = get_field('page_header', 'options');
+    $img = $default_img['sizes']['social'];
     }
     if(has_excerpt()) {
     $excerpt = strip_tags($post->post_excerpt);
     $excerpt = str_replace("", "'", $excerpt);
     } else {
-    $excerpt = get_bloginfo('description');
+      $excerpt = strip_tags($post->post_content);
+      $excerpt = str_replace("", "'", $excerpt);
+      $excerpt = wp_trim_words($excerpt, 30);
     }
     ?>
     <meta property="og:title" content="<?php echo the_title(); ?>"/>
