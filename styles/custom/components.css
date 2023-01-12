@@ -237,14 +237,6 @@ iframe {
   @apply rounded-full;
 }
 
-.wp-block-button.bg-primary-default:hover {
-  @apply bg-transparent;
-}
-
-.wp-block-button.bg-primary-default:hover > .wp-block-button__link {
-  @apply bg-transparent;
-}
-
 /* .blog article img {
   aspect-ratio: 3/4;
 } */
