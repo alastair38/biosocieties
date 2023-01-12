@@ -9,10 +9,10 @@
 $external_link = get_field('external_link');
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="relative bg-primary-default flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row items-center' : 'flex-col justify-between';?> gap-2 rounded-md shadow-md">
+<article id="post-<?php the_ID(); ?>" class="relative flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row items-center' : 'flex-col justify-between';?> gap-2 rounded-md shadow-md">
 
 
-	<a class="hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400 overflow-hidden w-full h-full rounded-md flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row' : 'flex-col';?>" href="<?php 
+	<a class="<?php print ((get_post_type() === 'articles-and-reviews')) ? 'bg-neutral-dark-900 text-primary-default' : 'bg-primary-default';?> hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400 overflow-hidden w-full h-full rounded-md flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row' : 'flex-col';?>" href="<?php 
 	
 	if($external_link) {
 		echo esc_url( $external_link );
@@ -26,7 +26,7 @@ if(('video' === get_post_type())):
 elseif(('journal_editions' === get_post_type())):?>
 	<img src="<?php echo get_template_directory_uri() . '\assets\images\defaults\biosocieties-covers.png'?>" alt="" class="w-32 object-contain h-full aspect-square p-2 bg-accent-default">
 <?php elseif(('articles-and-reviews' === get_post_type())):
-	blockhaus_post_thumbnail('full', 'aspect-square object-top'); ?>
+	blockhaus_post_thumbnail('full', 'h-60 object-top'); ?>
 <?php elseif(is_author()):
 	blockhaus_post_thumbnail('medium', 'aspect-square flex h-full w-1/5'); 
 else: 
@@ -34,7 +34,7 @@ else:
 endif;
 
 ?>
-	<div class="flex flex-col justify-center  gap-2 p-3">
+	<div class="flex flex-col flex-1 justify-center gap-2 p-3">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -62,7 +62,7 @@ endif;
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta text-sm italic">
+			<div class="entry-meta text-sm italic mt-auto">
 				<?php
 				blockhaus_posted_on();
 			

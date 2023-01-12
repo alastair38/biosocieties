@@ -17,7 +17,7 @@ figcaption {
 [class*='blockhaus'] .wp-block-button__link,
 [class*='blockhaus'] .wp-block-read-more,
 .is-style-button-rounded a.wp-block-button__link {
-  @apply hover:ring-4 hover:ring-offset focus:ring-4 focus:ring-offset;
+  @apply hover:ring-4 hover:ring-yellow-400 focus:ring-4 focus:ring-yellow-400;
 }
 
 /* PSEUDO STYLES FOR LINKS */
@@ -26,5 +26,9 @@ figcaption {
 .wp-block-button__link:focus,
 .wp-block-button__link:hover,
 .wp-block-button__link:visited {
+  @apply text-current;
+}
+
+a.text-primary-default h2 {
   @apply text-current;
 }
