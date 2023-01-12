@@ -15,8 +15,8 @@ $articles = get_posts(array(
 			));?>
 	
 			<aside class="py-6 lg:py-12 px-6 lg:px-20">
-				<h2 class="w-11/12 mx-auto text-xl text-neutral-dark-100 font-black">Featured</h2>
-			<div class="grid gap-6 mt-6 w-11/12 py-4 md:py-1 scroll-px-4 overflow-x-auto mx-auto grid-flow-col auto-cols-[60%] md:auto-cols-auto md:grid-cols-5 overscroll-contain snap-x">
+				<h2 class="w-11/12 mx-auto text-xl px-2 text-neutral-dark-100 font-black">Featured</h2>
+			<div class="grid gap-6 mt-6 w-11/12 py-4 px-2 md:py-1 scroll-px-4 overflow-x-auto mx-auto grid-flow-col auto-cols-[60%] md:auto-cols-auto md:grid-cols-5 overscroll-contain snap-x">
 	
 		 <?php foreach($articles as $item):
 			$external_link = get_field('external_link', $item->ID);
