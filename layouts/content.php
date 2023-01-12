@@ -12,7 +12,7 @@ $external_link = get_field('external_link');
 <article id="post-<?php the_ID(); ?>" class="relative bg-primary-default flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row items-center' : 'flex-col justify-between';?> gap-2 rounded-md shadow-md">
 
 
-	<a class="hover:ring-2 hover:ring-yellow-400 overflow-hidden w-full rounded-md flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row' : 'flex-col';?>" href="<?php 
+	<a class="hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400 overflow-hidden w-full h-full rounded-md flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row' : 'flex-col';?>" href="<?php 
 	
 	if($external_link) {
 		echo esc_url( $external_link );
@@ -25,10 +25,12 @@ if(('video' === get_post_type())):
 	blockhaus_post_thumbnail('full', 'aspect-video object-top'); 
 elseif(('journal_editions' === get_post_type())):?>
 	<img src="<?php echo get_template_directory_uri() . '\assets\images\defaults\biosocieties-covers.png'?>" alt="" class="w-32 object-contain h-full aspect-square p-2 bg-accent-default">
+<?php elseif(('articles-and-reviews' === get_post_type())):
+	blockhaus_post_thumbnail('full', 'aspect-square object-top'); ?>
 <?php elseif(is_author()):
 	blockhaus_post_thumbnail('medium', 'aspect-square flex h-full w-1/5'); 
 else: 
-	blockhaus_post_thumbnail('blog', 'flex w-full object-fit'); 
+	blockhaus_post_thumbnail('blog', 'flex w-full object-cover'); 
 endif;
 
 ?>
