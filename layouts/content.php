@@ -12,7 +12,7 @@ $external_link = get_field('external_link');
 <article id="post-<?php the_ID(); ?>" class="relative flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row items-center' : 'flex-col justify-between';?> gap-2 rounded-md shadow-md">
 
 
-	<a class="<?php print ((get_post_type() === 'articles-and-reviews')) ? 'bg-neutral-dark-900 text-primary-default' : 'bg-primary-default';?> hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400 overflow-hidden w-full h-full rounded-md flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row' : 'flex-col';?>" href="<?php 
+	<a class="hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400 overflow-hidden w-full h-full rounded-md flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row' : 'flex-col';?>" href="<?php 
 	
 	if($external_link) {
 		echo esc_url( $external_link );
@@ -34,7 +34,7 @@ else:
 endif;
 
 ?>
-	<div class="flex flex-col flex-1 justify-center gap-2 p-3">
+	<div class="<?php print ((get_post_type() === 'articles-and-reviews')) ? 'bg-neutral-dark-900 text-primary-default' : 'bg-primary-default';?> flex flex-col flex-1 justify-center gap-2 p-3">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -62,7 +62,7 @@ endif;
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta text-sm italic mt-auto">
+			<div class="entry-meta text-sm italic">
 				<?php
 				blockhaus_posted_on();
 			

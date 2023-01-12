@@ -1433,7 +1433,7 @@ ol.comment-list li a.comment-reply-link, ol.comment-list li a.comment-edit-link 
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-aol.comment-list li a.comment-reply-link h2, aol.comment-list li a.comment-edit-link h2 {
+a divol.comment-list li a.comment-reply-link h2, a divol.comment-list li a.comment-edit-link h2 {
   color: currentColor;
 }
 
@@ -1498,7 +1498,7 @@ form.comment-form .comment-form-comment textarea {
   color: var(--wp--preset--color--primary-default);
 }
 
-a.comment-form .submit h2, a.reply a h2 {
+a div.comment-form .submit h2, a div.reply a h2 {
   color: currentColor;
 }
 
@@ -1526,7 +1526,7 @@ a.comment-form .submit h2, a.reply a h2 {
   color: var(--wp--preset--color--primary-default);
 }
 
-a.comment-reply-title small #cancel-comment-reply-link h2 {
+a div.comment-reply-title small #cancel-comment-reply-link h2 {
   color: currentColor;
 }
 
@@ -2880,7 +2880,7 @@ figcaption {
   color: currentColor;
 }
 
-a.text-primary-default h2 {
+a div.text-primary-default h2 {
   color: currentColor;
 }
 

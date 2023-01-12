@@ -29,6 +29,6 @@ figcaption {
   @apply text-current;
 }
 
-a.text-primary-default h2 {
+a div.text-primary-default h2 {
   @apply text-current;
 }
