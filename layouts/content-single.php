@@ -29,7 +29,7 @@ get_template_part('components/content', 'full-width-post-header');
 		<?php
 
 if ( has_post_thumbnail() && (get_post_type() !== 'video' ) ): ?>
-	<?php the_post_thumbnail( 'full', ['class' => 'w-1/3 object-contain mr-6 mt-6 float-left rounded-md shadow-md'] ); ?>
+	<?php the_post_thumbnail( 'full', ['class' => 'w-1/3 object-contain mr-6 mt-2 float-left rounded-md shadow-md'] ); ?>
 
 <?php endif;
 
