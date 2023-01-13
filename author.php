@@ -17,6 +17,7 @@ get_header();
 $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 
 $biography = get_field('profile_biography', 'user_' . $curauth->ID);
+$biographyPlus = get_field('profile_biography_extra', 'user_' . $curauth->ID);
 $image = get_field('profile_image', 'user_' . $curauth->ID);
 $quote = get_field('profile_quote', 'user_' . $curauth->ID);
 $links = get_field('profile_links', 'user_' . $curauth->ID);
@@ -54,6 +55,12 @@ $links = get_field('profile_links', 'user_' . $curauth->ID);
 					if($biography):?>
 						<div>
 						<?php echo $biography;?>
+					</div>
+					<?php endif;
+					
+					if($biographyPlus):?>
+						<div>
+						<?php echo $biographyPlus;?>
 					</div>
 					<?php endif;
 					
