@@ -66,7 +66,7 @@ $links = get_field('profile_links', 'user_' . $curauth->ID);
 					
 					if( have_rows('links', 'user_' . $curauth->ID) ): ?>
 					<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 border rounded-md p-6">
-						<h2 class="col-span-full font-bold w-full">Interviews and recent publications</h2>
+						<h2 class="col-span-full font-bold w-full">Publications and interviews</h2>
 				
 				
 						<?php while( have_rows('links', 'user_' . $curauth->ID) ): the_row(); 
@@ -74,7 +74,7 @@ $links = get_field('profile_links', 'user_' . $curauth->ID);
 						?>
 				
 								<article >
-									<a class="bg-primary-default overflow-hidden h-full flex flexcol gap-2 items-center rounded-md shadow-md" href="<?php the_sub_field('link_url'); ?>">
+									<a class="hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400 bg-primary-default overflow-hidden h-full flex flexcol gap-2 items-center rounded-md shadow-md" href="<?php the_sub_field('link_url'); ?>">
 									<figure class="aspect-square flex h-full w-1/4">
 									<?php if($image):?>
 										<img class="h-full" src="<?php echo $image['url']?>"/>
