@@ -28,7 +28,7 @@ elseif(('journal_editions' === get_post_type())):?>
 <?php elseif(('articles-and-reviews' === get_post_type())):
 	blockhaus_post_thumbnail('full', 'h-60 object-top'); ?>
 <?php elseif(is_author()):
-	blockhaus_post_thumbnail('medium', 'aspect-square flex h-full w-1/5'); 
+	blockhaus_post_thumbnail('profile', 'aspect-square flex h-full'); 
 else: 
 	blockhaus_post_thumbnail('blog', 'flex w-full object-cover'); 
 endif;
