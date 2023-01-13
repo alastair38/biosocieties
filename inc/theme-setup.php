@@ -164,3 +164,5 @@ add_action( 'admin_head', 'blockhaus_fix_svg' );
   }
   
   add_filter( 'image_size_names_choose', 'blockhaus_image_names' );
+  
+  add_post_type_support('page', 'excerpt' );
