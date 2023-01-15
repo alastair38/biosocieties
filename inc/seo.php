@@ -99,12 +99,12 @@ function blockhaus_opengraph() {
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
     <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
-    <meta property="og:image" content="<?php echo $img; ?>"/>
+    <meta property="og:image" content="<?php echo $img; ?>?4362984378"/>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="<?php echo the_permalink(); ?>" />
     <meta name="twitter:title" content="<?php echo the_title(); ?>" />
     <meta name="twitter:description" content="<?php echo $excerpt; ?>" />
-    <meta name="twitter:image" content="<?php echo $img; ?>" />
+    <meta name="twitter:image" content="<?php echo $img; ?>?4362984378" />
     <?php
     } else {
     return;
