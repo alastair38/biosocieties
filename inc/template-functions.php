@@ -11,20 +11,14 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
+
 function blockhaus_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}
 
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
-	}
-
-	else {
-		$classes[] = 'flex flex-col h-full w-full bg-neutral-light-100 bg-cover bg-fixed';
-	}
+	$consentPanel = get_field('consent_panel_settings', 'options');
+	$theme = $consentPanel['theme'];
+	
+	$classes[] = 'flex flex-col h-full w-full bg-neutral-light-100 bg-cover bg-fixed ' . $theme;
 
 	return $classes;
 }
