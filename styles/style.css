@@ -3851,6 +3851,29 @@ figure img {
      object-fit: cover;
 }
 
+figure.is-type-video {
+  display: flex;
+  aspect-ratio: 16 / 9;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  background-color: var(--wp--preset--color--neutral-light-500);
+}
+
+.is-type-video .wp-block-embed__wrapper {
+  width: 100%;
+}
+
+.privacy-message {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.privacy-message.hide-message {
+  display: none;
+}
+
 figcaption {
   padding-left: 0.5rem;
   padding-right: 0.5rem;

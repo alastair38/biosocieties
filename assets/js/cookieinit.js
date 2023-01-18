@@ -3,13 +3,12 @@ var cc = initCookieConsent();
 
 const analytics = WPVars.analytics;
 
-console.log(analytics);
-
 // run plugin with your configuration
 cc.run({
   current_lang: 'en',
   autoclear_cookies: true, // default: false
   page_scripts: true, // default: false
+  remove_cookie_tables: true,
 
   // mode: 'opt-in'                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
   // delay: 0,                               // default: 0
@@ -58,9 +57,9 @@ cc.run({
       consent_modal: {
         title: 'We use cookies!',
         description:
-          'Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. <button type="button" data-cc="c-settings" class="cc-link">Let me choose</button>',
+          'Hi, this website uses essential cookies to ensure its proper operation if you are a logged in user or attempting to log in. Some third-party cookies from YouTube to display videos will be set when viewing the embedded media content. <button type="button" data-cc="c-settings" class="cc-link">More information</button>',
         primary_btn: {
-          text: 'Accept all',
+          text: 'Accept & Close',
           role: 'accept_all', // 'accept_selected' or 'accept_all'
         },
         secondary_btn: {
@@ -71,7 +70,7 @@ cc.run({
       settings_modal: {
         title: 'Cookie preferences',
         save_settings_btn: 'Save settings',
-        accept_all_btn: 'Accept all',
+        accept_all_btn: 'Accept & Close',
         reject_all_btn: 'Reject all',
         close_btn_label: 'Close',
         cookie_table_headers: [
@@ -83,7 +82,7 @@ cc.run({
         blocks: [
           {
             title: 'Cookie usage 📢',
-            description: `We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="
+            description: `We use cookies to ensure the basic functionalities of the website and to enhance the online experience for logged in users. A cookie to check whether a user's browser accepts cookies is also set when a user attempts to log in. No cookies are set for non-logged in users or those who have not attempted to log in. For more details relative to cookies and other sensitive data, please read the full <a href="
               ${WPVars.privacy_page}" class="cc-link">privacy policy</a>.`,
           },
           {
@@ -93,35 +92,59 @@ cc.run({
             toggle: {
               value: 'necessary',
               enabled: true,
-              readonly: true, // cookie categories with readonly=true are all treated as "necessary cookies"
-            },
-          },
-          {
-            title: `${analytics ? 'Performance and Analytics cookies' : ''}`,
-            description:
-              'These cookies allow the website to remember the choices you have made in the past',
-            toggle: {
-              value: 'analytics', // your cookie category
-              enabled: false,
-              readonly: false,
+              readonly: false, // cookie categories with readonly=true are all treated as "necessary cookies"
             },
             cookie_table: [
               // list of all expected cookies
               {
-                col1: '^_ga', // match all cookies starting with "_ga"
-                col2: 'google.com',
-                col3: '2 years',
-                col4: 'description ...',
+                col1: 'wordpress_test_cookie', // match all cookies starting with "_ga"
+                col2: location.hostname,
+                col3: 'Session',
+                col4: "A cookie to check whether a user's browser accepts cookies is also set on the login screen before logging in",
                 is_regex: true,
               },
               {
-                col1: '_gid',
-                col2: 'google.com',
-                col3: '1 day',
-                col4: 'description ...',
+                col1: '^wordpress_', // match all cookies starting with "wordpress"
+                col2: location.hostname,
+                col3: '',
+                col4: '',
+                is_regex: true,
+              },
+              {
+                col1: '^wp_', // match all cookies starting with "wordpress"
+                col2: location.hostname,
+                col3: '',
+                col4: '',
+                is_regex: true,
               },
             ],
           },
+          // {
+          //   title: `${analytics ? 'Performance and Analytics cookies' : ''}`,
+          //   description:
+          //     'These cookies allow the website to remember the choices you have made in the past',
+          //   toggle: {
+          //     value: 'analytics', // your cookie category
+          //     enabled: false,
+          //     readonly: false,
+          //   },
+          //   cookie_table: [
+          //     // list of all expected cookies
+          //     {
+          //       col1: '^_ga', // match all cookies starting with "_ga"
+          //       col2: 'google.com',
+          //       col3: '2 years',
+          //       col4: 'description ...',
+          //       is_regex: true,
+          //     },
+          //     {
+          //       col1: '_gid',
+          //       col2: 'google.com',
+          //       col3: '1 day',
+          //       col4: 'description ...',
+          //     },
+          //   ],
+          // },
           // {
           //   title: 'Advertisement and Targeting cookies',
           //   description:

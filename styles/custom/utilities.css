@@ -8,6 +8,22 @@ figure img {
   @apply object-cover;
 }
 
+figure.is-type-video {
+  @apply aspect-video bg-neutral-light-500 rounded-md flex items-center justify-center;
+}
+
+.is-type-video .wp-block-embed__wrapper {
+  @apply w-full;
+}
+
+.privacy-message {
+  @apply flex flex-col gap-6;
+}
+
+.privacy-message.hide-message {
+  @apply hidden;
+}
+
 figcaption {
   @apply px-2 text-center;
 }

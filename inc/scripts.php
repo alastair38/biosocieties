@@ -24,8 +24,12 @@ function blockhaus_scripts() {
 	
 		$analytics = get_field('analytics_settings', 'option');
 		$analyticsSet = $analytics['analytics_cookies_set'];
+		
+		$social_media = get_field('social_media_settings', 'option');
+	  $enhancedPrivacy = $social_media['enhanced_privacy'];
+		
 	
-		endif;
+	endif;
 	
 		if($cookiesSet) {
 				wp_enqueue_script( 'cookie-js', 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.js', array(), '', true );
@@ -42,14 +46,30 @@ function blockhaus_scripts() {
 				)
 			);
 	
-	
 		}
+		
+		if($enhancedPrivacy):
+			wp_enqueue_script( 'blockhaus-embedPrivacy', get_template_directory_uri() . '/assets/js/embedPrivacy.js', array(), wp_get_theme()->get( 'Version' ), true );
+			endif;
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'blockhaus_scripts' );
+
+
+// add_filter( 'script_loader_tag', 'add_id_to_script', 10, 3 );
+
+
+
+// function add_id_to_script( $tag, $handle, $src ) {
+//     if ( 'cookie-js' === $handle ) {
+//         $tag = '<script type="text/javascript" src="' . esc_url( $src ) . '" id="cookiejs" data-app-key="12345"></script>';
+//     }
+
+//     return $tag;
+// }
 
 // Block variations js
 
