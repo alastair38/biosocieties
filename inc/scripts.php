@@ -33,7 +33,8 @@ function blockhaus_scripts() {
 	
 		if($cookiesSet) {
 				wp_enqueue_script( 'cookie-js', 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.js', array(), '', true );
-				wp_enqueue_script( 'cookie-init-js', get_template_directory_uri() . '/assets/js/cookieinit.js', array( 'cookie-js' ), '', true );
+				
+				wp_enqueue_script( 'cookie-init-js', get_template_directory_uri() . '/assets/js/cookieinit.js', array('cookie-js'), wp_get_theme()->get( 'Version' ), true );
 	
 				// wp_enqueue_style( 'cookie-style', 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.css', array(), '', 'all' ); 
 				
