@@ -124,3 +124,11 @@ form.comment-form .comment-form-comment textarea {
 .required-field-message {
   @apply ml-auto;
 }
+
+.comment-form-cookies-consent {
+  @apply flex items-center gap-2;
+}
+
+input#submit {
+  @apply hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400;
+}

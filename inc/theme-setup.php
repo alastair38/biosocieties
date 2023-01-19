@@ -166,3 +166,27 @@ add_action( 'admin_head', 'blockhaus_fix_svg' );
   add_filter( 'image_size_names_choose', 'blockhaus_image_names' );
   
   add_post_type_support('page', 'excerpt' );
+  
+// disable url field
+function disable_comment_url($fields) {
+  if(isset($fields['url']))
+      unset($fields['url']);
+  return $fields;
+}
+
+add_filter('comment_form_default_fields', 'disable_comment_url');
+
+function customize_comment_form_cookies_consent_label( $translated, $original, $domain ) {
+ 
+  $strings = array(
+      'Save my name, email, and website in this browser for the next time I comment.' => 'Save my name and email in this browser for the next time I comment. <strong>This will set cookies on your device</strong>.'
+  );
+
+  if ( ! empty( $strings[$original] ) ) {
+      $translations = &get_translations_for_domain( $domain );
+      $translated = $translations->translate( $strings[$original] );
+  }
+
+  return $translated;
+}
+add_filter( 'gettext', 'customize_comment_form_cookies_consent_label', 10, 3 );

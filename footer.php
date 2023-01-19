@@ -61,11 +61,31 @@ endif;
 ?>
 	</ul>
 	</div>
-<p class="flex justify-center p-6">
+	<p class="grid grid-cols-2 place-items-center gap-x-6 gap-y-2 text-sm px-6">
+<?php
+
+if(function_exists('get_field')):
+
+	$consentPanel = get_field('consent_panel_settings', 'option');
+	$privacyPage = $consentPanel['privacy_page'];
+	$contactPage = $consentPanel['contact_page'];
+
+endif;
+
+if($privacyPage):?>
+	<a class="w-fit place-self-end" href="<?php echo $privacyPage;?>">Privacy Policy</a>
+<?php endif;
+
+if($contactPage):?>
+	<a class="w-fit place-self-start" href="<?php echo $contactPage;?>">Contact Us</a>
+<?php endif;
+
+?>
+<span class="col-span-full italic">
 		<?php
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html_e( bloginfo('name') . ' &copy; ' . date("Y") , 'Blockhaus' ), 'Blockhaus' );
-				?>
+				?></span>
 </p>
 
 </div>

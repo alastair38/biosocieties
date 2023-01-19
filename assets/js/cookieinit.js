@@ -82,13 +82,13 @@ cc.run({
         blocks: [
           {
             title: 'Cookie usage 📢',
-            description: `We use cookies to ensure the basic functionalities of the website and to enhance the online experience for logged in users. A cookie to check whether a user's browser accepts cookies is also set when a user attempts to log in. No cookies are set for non-logged in users or those who have not attempted to log in. For more details relative to cookies and other sensitive data, please read the full <a href="
+            description: `We use cookies to ensure the basic functionalities of the website and to enhance the online experience for logged in users. On the front-end of the website, cookies will be set on your device if you leave a comment on an article and check the box consenting to this. A cookie to check whether a user's browser accepts cookies is also set when a user attempts to log in. Aside from this, No cookies are set for non-logged in users or those who have not attempted to log in. For more details relative to cookies and other sensitive data, please read the full <a href="
               ${WPVars.privacy_page}" class="cc-link">privacy policy</a>.`,
           },
           {
             title: 'Strictly necessary cookies',
             description:
-              'These cookies are essential for the proper functioning of this website. Without these cookies, the website would not work properly.',
+              'These cookies are essential for the proper functioning of this website. Without these cookies, the website may not work properly.',
             toggle: {
               value: 'necessary',
               enabled: true,
@@ -97,21 +97,35 @@ cc.run({
             cookie_table: [
               // list of all expected cookies
               {
-                col1: 'wordpress_test_cookie', // match all cookies starting with "_ga"
+                col1: 'wordpress_test_cookie',
                 col2: location.hostname,
                 col3: 'Session',
                 col4: "A cookie to check whether a user's browser accepts cookies is also set on the login screen before logging in",
                 is_regex: true,
               },
               {
-                col1: '^wordpress_', // match all cookies starting with "wordpress"
+                col1: '^wordpress_', // match all cookies starting with "wordpress_"
                 col2: location.hostname,
                 col3: '',
                 col4: '',
                 is_regex: true,
               },
               {
-                col1: '^wp_', // match all cookies starting with "wordpress"
+                col1: '^wordpress-', // match all cookies starting with "wordpress-"
+                col2: location.hostname,
+                col3: '',
+                col4: '',
+                is_regex: true,
+              },
+              {
+                col1: '^wp_', // match all cookies starting with "wp_"
+                col2: location.hostname,
+                col3: '',
+                col4: '',
+                is_regex: true,
+              },
+              {
+                col1: '^wp-', // match all cookies starting with "wp-"
                 col2: location.hostname,
                 col3: '',
                 col4: '',
