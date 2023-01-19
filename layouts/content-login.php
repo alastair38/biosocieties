@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="p-6 w-11/12 md:w-3/4 bg-white rounded-md mx-auto space-y-6">
+<article id="post-<?php the_ID(); ?>" class="p-6 w-11/12 md:w-3/4 mx-auto space-y-6">
 	<header class="entry-header sr-only">
 		<?php 
 		if( !is_user_logged_in()): 
@@ -36,7 +36,7 @@
 		if( !is_user_logged_in() ) {
 
 			wp_login_form( $args );
-			echo '<div class="flex gap-6 items-center justify-center mt-6"><a class="password-reset underline decoration-accent decoration-4" href="' . wp_lostpassword_url( ) . '" title="Lost Password">Click this link to reset your password</a></div>';
+			echo '<div class="flex gap-6 items-center justify-center mt-6"><a class="password-reset underline decoration-highlight decoration-2 hover:decoration-secondary focus:decoration-secondary" href="' . wp_lostpassword_url( ) . '" title="Lost Password">Click this link to reset your password</a></div>';
 			
 		} else {
 
@@ -44,7 +44,7 @@
 		
 			echo '<div class="flex flex-col gap-6 items-center justify-center mt-6">
 			<p>Hi, ' . $current_user->display_name . '</p>
-			<a class="bg-accent-default text-primary-default py-1 px-2 border border-current shadow-md rounded-full" href="' . esc_url( wp_logout_url() ) . '">Logout</a></div>';
+			<a class="bg-primary-default py-1 px-12 rounded-md shadow-md border border-current cursor-pointer hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400" href="' . esc_url( wp_logout_url() ) . '">Logout</a></div>';
 		}
 
 		// wp_link_pages(

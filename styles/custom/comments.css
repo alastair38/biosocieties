@@ -129,6 +129,10 @@ form.comment-form .comment-form-comment textarea {
   @apply flex items-center gap-2;
 }
 
+.comment-form-cookies-consent input[type='checkbox'] {
+  @apply text-accent-default rounded-full w-6 h-6 focus:ring-accent-default;
+}
+
 input#submit {
   @apply hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400;
 }

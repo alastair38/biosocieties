@@ -13,6 +13,9 @@
  */
 
 get_header();
+
+$post_type = get_post_type();
+$post_type_obj = get_post_type_object( $post_type );
 ?>
 
 	<!-- <main id="primary" class="pt-20 lg:p-6 bg-primary-default my-12 rounded-md w-11/12 md:w-3/4 mx-auto grid-cols-1 md:grid-cols-3 gap-6"> -->
@@ -31,9 +34,11 @@ get_header();
 				<div class="grid my-6 md:my-12 rounded-md w-11/12 lg:w-2/3 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
 				<?php
-			endif;
+			endif;?>
+			
+			<div class="col-span-full"><?php echo blockhaus_custom_form("Search " . $post_type_obj->labels->name . " ..."); ?></div>
 
-			$description = get_field(get_post_type() . '_page_description', "options");
+			<?php $description = get_field(get_post_type() . '_page_description', "options");
 
 			if($description):?>
 
