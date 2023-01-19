@@ -28,7 +28,7 @@ get_header();
 			
 	get_template_part('components/content', 'full-width-header');?>
 
-				<div class="bg-primary-default grid my-6 md:my-12 rounded-md w-11/12 lg:w-2/3 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div class="grid my-6 md:my-12 rounded-md w-11/12 lg:w-2/3 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
 				<?php
 			endif;
