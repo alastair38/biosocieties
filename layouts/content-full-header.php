@@ -22,7 +22,7 @@ get_template_part('components/content', 'full-width-header');
 
 <!-- .page-header -->
 
-	<div class="space-y-6 w-11/12 md:w-2/3 mx-auto overflow-hidden">
+	<div class="space-y-6 w-11/12 md:w-2/3 mx-auto">
 		<?php
 		the_content();
 
