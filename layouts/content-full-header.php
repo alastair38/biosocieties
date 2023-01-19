@@ -7,9 +7,6 @@
  * @package blockhaus
  */
 
-$background_image = get_field('background_image_layout');
-$contain_image = get_field('contain_image_layout');
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="w-full space-y-6 md:space-y-12">

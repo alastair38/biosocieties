@@ -11,7 +11,7 @@
   --wp--preset--color--neutral-dark-100: rgba(35 41 41 / 1);
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Myriad Pro Regular';
   font-style: normal;
   font-weight: normal;
@@ -20,7 +20,8 @@
 
 body {
   font-family: 'Myriad Pro Regular' !important;
-}
+  font-size: 1.25rem !important;
+} */
 
 .editor-styles-wrapper h1[contenteditable='true'],
 .editor-styles-wrapper h2 {
@@ -84,8 +85,15 @@ td.featured_article.column-featured_article span[data-featured='no'] {
 bg-accent-secondary
 bg-accent-tertiary*/
 
-.acf-label label {
-  margin-bottom: 0.5rem;
+.toplevel_page_theme-options .acf-label label {
+  font-size: 15px !important;
+}
+
+.toplevel_page_theme-options #poststuff .stuffbox > h3,
+.toplevel_page_theme-options #poststuff h2,
+.toplevel_page_theme-options #poststuff h3.hndle {
+  font-size: 16px !important;
+  text-transform: uppercase;
 }
 
 .color-switcher .selected input[type='radio'][value='offset']:after {
@@ -155,6 +163,7 @@ bg-accent-tertiary*/
 .postbox {
   border-radius: 6px;
   overflow: hidden;
+  margin-bottom: 3rem;
 }
 
 .meta-box-sortables .postbox .toggle-indicator::before {
@@ -186,8 +195,25 @@ bg-accent-tertiary*/
   color: var(--wp--preset--color--secondary);
 }
 
-.acf-label.acf-accordion-title {
+.acf-field.acf-accordion .acf-label.acf-accordion-title {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.acf-accordion .acf-accordion-title .acf-accordion-icon {
   background: whitesmoke;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.acf-label label {
+  margin-bottom: 0.5rem;
+}
+
+.toplevel_page_theme-options .postbox-header {
+  background-color: whitesmoke;
 }
 
 a.components-button.edit-post-fullscreen-mode-close svg {
@@ -215,7 +241,7 @@ a.components-button.edit-post-fullscreen-mode-close svg {
   display: none;
 }
 
-#adminmenu,
+/* #adminmenu,
 li#wp-admin-bar-my-account .ab-item,
 li#wp-admin-bar-my-account .ab-item .display-name,
 #wpadminbar,
@@ -225,7 +251,7 @@ li#wp-admin-bar-my-account .ab-item .display-name,
 .toplevel_page_theme-options,
 #wpbody-content {
   font-family: 'Myriad Pro Regular';
-}
+} */
 
 #wpadminbar {
   box-shadow: 0 1px 1px rgba(70, 70, 70, 0.12), 0 1px 1px rgba(70, 70, 70, 0.12),
