@@ -8,7 +8,7 @@ cc.run({
   current_lang: 'en',
   autoclear_cookies: true, // default: false
   page_scripts: true, // default: false
-  remove_cookie_tables: true,
+  // remove_cookie_tables: true,
 
   // mode: 'opt-in'                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
   // delay: 0,                               // default: 0
@@ -34,6 +34,9 @@ cc.run({
     if (cc.allowedCategory('analytics')) {
       console.log('Accept Clarity cookies');
       window.clarity('consent');
+    } else {
+      console.log('Accept Clarity cookies rejected');
+      window.clarity('stop');
     }
   },
 
@@ -60,9 +63,9 @@ cc.run({
       consent_modal: {
         title: 'We use cookies!',
         description:
-          'Hi, this website uses essential cookies to ensure its proper operation if you are a logged in user or attempting to log in. Some third-party cookies from YouTube to display videos will be set when viewing the embedded media content. <button type="button" data-cc="c-settings" class="cc-link">More information</button>',
+          'Hi, this website uses essential cookies to ensure its proper operation if you are a logged in user or attempting to log in. Some third-party cookies from YouTube to display videos will be set when viewing the embedded media content. You can quickly <button type="button" data-cc="c-settings" class="cc-link">update these settings</button>',
         primary_btn: {
-          text: 'Accept & Close',
+          text: 'Accept All & Close',
           role: 'accept_all', // 'accept_selected' or 'accept_all'
         },
         secondary_btn: {
@@ -73,7 +76,7 @@ cc.run({
       settings_modal: {
         title: 'Cookie preferences',
         save_settings_btn: 'Save settings',
-        accept_all_btn: 'Accept & Close',
+        accept_all_btn: 'Accept All & Close',
         reject_all_btn: 'Reject all',
         close_btn_label: 'Close',
         cookie_table_headers: [
@@ -148,17 +151,53 @@ cc.run({
             cookie_table: [
               // list of all expected cookies
               {
-                col1: '^_ga', // match all cookies starting with "_ga"
-                col2: 'google.com',
+                col1: '^_clck', // match all cookies starting with "_ga"
+                col2: '.hysterical-hope.localsite.io',
+                col3: '12 months',
+                col4: 'description ...',
+                is_regex: true,
+              },
+              {
+                col1: '^_clsk',
+                col2: '.hysterical-hope.localsite.io',
+                col3: '1 day',
+                col4: 'description ...',
+                is_regex: true,
+              },
+              {
+                col1: '^CLID', // match all cookies starting with "_ga"
+                col2: '.hysterical-hope.localsite.io',
                 col3: '2 years',
                 col4: 'description ...',
                 is_regex: true,
               },
               {
-                col1: '_gid',
-                col2: 'google.com',
-                col3: '1 day',
+                col1: '^ANONCHK', // match all cookies starting with "_ga"
+                col2: '.hysterical-hope.localsite.io',
+                col3: '2 years',
                 col4: 'description ...',
+                is_regex: true,
+              },
+              {
+                col1: '^MR', // match all cookies starting with "_ga"
+                col2: '.hysterical-hope.localsite.io',
+                col3: '2 years',
+                col4: 'description ...',
+                is_regex: true,
+              },
+              {
+                col1: '^MUID', // match all cookies starting with "_ga"
+                col2: '.hysterical-hope.localsite.io',
+                col3: '2 years',
+                col4: 'description ...',
+                is_regex: true,
+              },
+              {
+                col1: '^SM', // match all cookies starting with "_ga"
+                col2: '.hysterical-hope.localsite.io',
+                col3: '2 years',
+                col4: 'description ...',
+                is_regex: true,
               },
             ],
           },
