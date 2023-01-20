@@ -46,16 +46,25 @@ function ns_google_analytics() {
 	endif;
 	
 	if($analyticsSet):
-
+// Clarity id fh8fj24caq
 	$gaCode = $analyticsTrackingCode;?>
-	<script type="text/plain" data-cookiecategory="analytics" async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $gaCode; ?>"></script>
+	<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+				t.setAttribute('data-cookiecategory', "analytics");
+			
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "<?php echo $gaCode; ?>");
+</script>
+	<!-- <script type="text/plain" data-cookiecategory="analytics" async src="https://www.googletagmanager.com/gtag/js?id=<?php // echo $gaCode; ?>"></script>
 	<script type="text/plain" data-cookiecategory="analytics">
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 	 
-	gtag('config', '<?php echo $gaCode; ?>');
-	</script>
+	gtag('config', '<?php // echo $gaCode; ?>');
+	</script> -->
 	<?php endif;
 	}
 	 

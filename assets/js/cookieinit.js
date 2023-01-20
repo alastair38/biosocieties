@@ -31,7 +31,10 @@ cc.run({
   },
 
   onAccept: function (cookie) {
-    // ...
+    if (cc.allowedCategory('analytics')) {
+      console.log('Accept Clarity cookies');
+      window.clarity('consent');
+    }
   },
 
   onChange: function (cookie, changed_preferences) {
@@ -133,32 +136,32 @@ cc.run({
               },
             ],
           },
-          // {
-          //   title: `${analytics ? 'Performance and Analytics cookies' : ''}`,
-          //   description:
-          //     'These cookies allow the website to remember the choices you have made in the past',
-          //   toggle: {
-          //     value: 'analytics', // your cookie category
-          //     enabled: false,
-          //     readonly: false,
-          //   },
-          //   cookie_table: [
-          //     // list of all expected cookies
-          //     {
-          //       col1: '^_ga', // match all cookies starting with "_ga"
-          //       col2: 'google.com',
-          //       col3: '2 years',
-          //       col4: 'description ...',
-          //       is_regex: true,
-          //     },
-          //     {
-          //       col1: '_gid',
-          //       col2: 'google.com',
-          //       col3: '1 day',
-          //       col4: 'description ...',
-          //     },
-          //   ],
-          // },
+          {
+            title: `${analytics ? 'Performance and Analytics cookies' : ''}`,
+            description:
+              'These cookies allow the website to remember the choices you have made in the past',
+            toggle: {
+              value: 'analytics', // your cookie category
+              enabled: false,
+              readonly: false,
+            },
+            cookie_table: [
+              // list of all expected cookies
+              {
+                col1: '^_ga', // match all cookies starting with "_ga"
+                col2: 'google.com',
+                col3: '2 years',
+                col4: 'description ...',
+                is_regex: true,
+              },
+              {
+                col1: '_gid',
+                col2: 'google.com',
+                col3: '1 day',
+                col4: 'description ...',
+              },
+            ],
+          },
           // {
           //   title: 'Advertisement and Targeting cookies',
           //   description:
