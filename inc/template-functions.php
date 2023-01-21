@@ -107,3 +107,11 @@ function filter_youtube_embed( $cached_html, $url = null ) {
 }
 add_filter( 'embed_oembed_html', 'filter_youtube_embed', 10, 2 );
 endif;
+
+add_action('wp_footer', 'simpleAnalyticsCode');
+function simpleAnalyticsCode(){?>
+
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+<?php };
