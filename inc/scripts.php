@@ -11,6 +11,8 @@ function blockhaus_scripts() {
 	wp_style_add_data( 'blockhaus-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'blockhaus-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
+	
+	wp_enqueue_script( 'cabin', 'https://scripts.withcabin.com/hello.js', array(), wp_get_theme()->get( 'Version' ), true );
 
 
 	if(function_exists('get_field')):
@@ -60,17 +62,17 @@ function blockhaus_scripts() {
 add_action( 'wp_enqueue_scripts', 'blockhaus_scripts' );
 
 
-// add_filter( 'script_loader_tag', 'add_id_to_script', 10, 3 );
+add_filter( 'script_loader_tag', 'add_id_to_script', 10, 3 );
 
 
 
-// function add_id_to_script( $tag, $handle, $src ) {
-//     if ( 'cookie-js' === $handle ) {
-//         $tag = '<script type="text/javascript" src="' . esc_url( $src ) . '" id="cookiejs" data-app-key="12345"></script>';
-//     }
+function add_id_to_script( $tag, $handle, $src ) {
+    if ( 'cabin' === $handle ) {
+        $tag = '<script async defer src="' . esc_url( $src ) . '"></script>';
+    }
 
-//     return $tag;
-// }
+    return $tag;
+}
 
 // Block variations js
 

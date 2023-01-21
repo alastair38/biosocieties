@@ -33,14 +33,21 @@ cc.run({
   onAccept: function (cookie) {
     if (cc.allowedCategory('analytics')) {
       console.log('Accept Clarity cookies');
-      window.clarity('consent');
+      // window.clarity('consent');
+    }
+
+    if (!cc.allowedCategory('analytics')) {
+      console.log(cookie);
+
+      // window.clarity('stop');
     }
   },
 
   onChange: function (cookie, changed_preferences) {
     if (!cc.allowedCategory('analytics')) {
-      console.log('Accept Clarity cookies rejected');
-      window.clarity('stop');
+      console.log('Clarity cookies rejected');
+
+      // window.clarity('stop');
     }
     // ...
   },

@@ -35,6 +35,7 @@
 	<meta name="theme-color" content="#ffffff">
 	<!-- <link rel="manifest" href="<?php echo get_template_directory_uri() . '/site.webmanifest';?>"> -->
 	
+	
 	<?php wp_head(); ?>
 </head>
 
