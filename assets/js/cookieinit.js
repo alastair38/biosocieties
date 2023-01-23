@@ -28,20 +28,22 @@ cc.run({
 
   onFirstAction: function (user_preferences, cookie) {
     // callback triggered only once
+    var clarity = window.clarity();
+    console.log(clarity);
   },
 
   onAccept: function (cookie) {
-    if (cc.allowedCategory('analytics') && window.clarity()) {
+    if (cc.allowedCategory('analytics')) {
       window.clarity('consent');
     }
 
-    if (!cc.allowedCategory('analytics') && window.clarity()) {
+    if (!cc.allowedCategory('analytics')) {
       window.clarity('stop');
     }
   },
 
   onChange: function (cookie, changed_preferences) {
-    if (!cc.allowedCategory('analytics') && window.clarity()) {
+    if (!cc.allowedCategory('analytics')) {
       window.clarity('stop');
     }
   },
