@@ -44,8 +44,6 @@ function blockhaus_scripts() {
 					"contact_page" => $contactPage,
 					"privacy_page" => $privacyPage,
 					"analytics" => $analyticsSet,
-					"time" => time(),
-					"images_folder" => get_template_directory_uri() . "/images",
 				)
 			);
 	

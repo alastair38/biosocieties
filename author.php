@@ -33,7 +33,7 @@ $links = get_field('profile_links', 'user_' . $curauth->ID);
 	<div class="mx-auto lg:mx-0 text-primary-default col-start-2 row-start-1 text-current place-self-center justify-self-start flex items-center gap-6">
 	<?php if($image):?>
  <figure>
-	 <img class="rounded-full" src="<?php echo $image['sizes']['thumbnail'];?>" width="<?php echo $image['sizes']['thumbnail-width'];?>" height="<?php echo $image['sizes']['thumbnail-height'];?>" alt=""/>
+	 <img class="rounded-full" src="<?php echo $image['sizes']['thumbnail'];?>" width="<?php echo $image['sizes']['thumbnail-width'];?>" height="<?php echo $image['sizes']['thumbnail-height'];?>" alt="<?php echo $image['alt'];?>"/>
  </figure>
 <?php endif;?>
 	<h1 class="text-lg lg:text-gigantic z-0 col-start-2 row-start-1 text-primary-default place-self-center justify-self-start font-black leading-tight"><?php the_archive_title();?></h1>
@@ -77,9 +77,9 @@ $links = get_field('profile_links', 'user_' . $curauth->ID);
 									<a class="hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400 bg-primary-default overflow-hidden h-full flex flexcol gap-2 items-center rounded-md shadow-md" href="<?php the_sub_field('link_url'); ?>">
 									<figure class="aspect-square flex h-full w-1/4">
 									<?php if($image):?>
-										<img class="h-full" src="<?php echo $image['url']?>"/>
+										<img class="h-full" src="<?php echo $image['url']?>" alt=""/>
 									<?php else:?>
-										<img class="h-full" src="<?php echo get_template_directory_uri() . '\assets\images\defaults\square_bw.jpg'?>"/>
+										<img class="h-full" src="<?php echo get_template_directory_uri() . '\assets\images\defaults\square_bw.jpg'?>" alt=""/>
 									<?php endif;?>
 									</figure>
 								

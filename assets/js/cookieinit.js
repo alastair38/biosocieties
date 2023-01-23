@@ -31,25 +31,19 @@ cc.run({
   },
 
   onAccept: function (cookie) {
-    if (cc.allowedCategory('analytics')) {
-      console.log('Accept Clarity cookies');
-      // window.clarity('consent');
+    if (cc.allowedCategory('analytics') && window.clarity()) {
+      window.clarity('consent');
     }
 
-    if (!cc.allowedCategory('analytics')) {
-      console.log(cookie);
-
-      // window.clarity('stop');
+    if (!cc.allowedCategory('analytics') && window.clarity()) {
+      window.clarity('stop');
     }
   },
 
   onChange: function (cookie, changed_preferences) {
-    if (!cc.allowedCategory('analytics')) {
-      console.log('Clarity cookies rejected');
-
-      // window.clarity('stop');
+    if (!cc.allowedCategory('analytics') && window.clarity()) {
+      window.clarity('stop');
     }
-    // ...
   },
 
   gui_options: {
@@ -71,7 +65,7 @@ cc.run({
       consent_modal: {
         title: 'We use cookies!',
         description:
-          'Hi, this website uses essential cookies to ensure its proper operation if you are a logged in user or attempting to log in. Some third-party cookies from YouTube to display videos will be set when viewing the embedded media content. You can quickly <button type="button" data-cc="c-settings" class="cc-link">update these settings</button>',
+          'Hi, this website uses essential cookies to ensure its proper operation if you are a logged in user or attempting to log in. Some third-party cookies from YouTube to display videos will be set when viewing the embedded media content. We also collect analytics, which you can opt-out of by <button type="button" data-cc="c-settings" class="cc-link">updating your settings</button>',
         primary_btn: {
           text: 'Accept All & Close',
           role: 'accept_all', // 'accept_selected' or 'accept_all'
@@ -96,7 +90,7 @@ cc.run({
         blocks: [
           {
             title: 'Cookie usage 📢',
-            description: `We use cookies to ensure the basic functionalities of the website and to enhance the online experience for logged in users. On the front-end of the website, cookies will be set on your device if you leave a comment on an article and check the box consenting to this. A cookie to check whether a user's browser accepts cookies is also set when a user attempts to log in. Aside from this, No cookies are set for non-logged in users or those who have not attempted to log in. For more details relative to cookies and other sensitive data, please read the full <a href="
+            description: `We use cookies to ensure the basic functionalities of the website and to enhance the online experience for logged in users. On the front-end of the website, cookies will be set on your device if you leave a comment on an article and check the box consenting to this. A cookie to check whether a user's browser accepts cookies is also set when a user attempts to log in. Some third-party cookies from YouTube to display videos will be set when viewing the embedded media content. We also collect analytics, which you can opt-out of. For more details relative to cookies and other sensitive data, please read the full <a href="
               ${WPVars.privacy_page}" class="cc-link">privacy policy</a>.`,
           },
           {
@@ -148,61 +142,61 @@ cc.run({
             ],
           },
           {
-            title: `${analytics ? 'Performance and Analytics cookies' : ''}`,
+            title: `${analytics ? 'Analytics cookies' : ''}`,
             description:
-              'These cookies allow the website to remember the choices you have made in the past',
+              'These cookies are used to analyse user visits to the website. No personal data of site visitors is stored by this website.',
             toggle: {
               value: 'analytics', // your cookie category
-              enabled: false,
+              enabled: true,
               readonly: false,
             },
             cookie_table: [
               // list of all expected cookies
               {
                 col1: '^_clck', // match all cookies starting with "_ga"
-                col2: '.hysterical-hope.localsite.io',
+                col2: location.hostname,
                 col3: '12 months',
                 col4: 'description ...',
                 is_regex: true,
               },
               {
                 col1: '^_clsk',
-                col2: '.hysterical-hope.localsite.io',
+                col2: location.hostname,
                 col3: '1 day',
                 col4: 'description ...',
                 is_regex: true,
               },
               {
                 col1: '^CLID', // match all cookies starting with "_ga"
-                col2: '.hysterical-hope.localsite.io',
+                col2: location.hostname,
                 col3: '2 years',
                 col4: 'description ...',
                 is_regex: true,
               },
               {
                 col1: '^ANONCHK', // match all cookies starting with "_ga"
-                col2: '.hysterical-hope.localsite.io',
+                col2: location.hostname,
                 col3: '2 years',
                 col4: 'description ...',
                 is_regex: true,
               },
               {
                 col1: '^MR', // match all cookies starting with "_ga"
-                col2: '.hysterical-hope.localsite.io',
+                col2: location.hostname,
                 col3: '2 years',
                 col4: 'description ...',
                 is_regex: true,
               },
               {
                 col1: '^MUID', // match all cookies starting with "_ga"
-                col2: '.hysterical-hope.localsite.io',
+                col2: location.hostname,
                 col3: '2 years',
                 col4: 'description ...',
                 is_regex: true,
               },
               {
                 col1: '^SM', // match all cookies starting with "_ga"
-                col2: '.hysterical-hope.localsite.io',
+                col2: location.hostname,
                 col3: '2 years',
                 col4: 'description ...',
                 is_regex: true,
