@@ -107,6 +107,6 @@ function simpleAnalyticsCode(){?>
 <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a9ebe90c6eb641e8a3ff68e977d99fc1"}'></script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "234e4798a7154807a84089eb96d38c30"}'></script>
 
 <?php };
