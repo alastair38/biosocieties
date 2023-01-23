@@ -38,7 +38,7 @@ cc.run({
     }
 
     if (!cc.allowedCategory('analytics')) {
-      window.clarity('stop');
+      // window.clarity('stop');
     }
   },
 
