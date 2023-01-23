@@ -35,14 +35,14 @@ cc.run({
       window.clarity('consent');
     }
 
-    if (!cc.allowedCategory('analytics' && analytics)) {
+    if (!cc.allowedCategory('analytics')) {
       // window.clarity('stop');
       console.log('Rejected analytics');
     }
   },
 
   onChange: function (cookie, changed_preferences) {
-    if (!cc.allowedCategory('analytics' && analytics)) {
+    if (!cc.allowedCategory('analytics')) {
       // window.clarity('stop');
       console.log('Rejected analytics');
     }
