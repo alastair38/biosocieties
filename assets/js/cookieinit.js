@@ -29,7 +29,7 @@ cc.run({
   onFirstAction: function (user_preferences, cookie) {
     // callback triggered only once
     var clarity = window.clarity();
-    console.log(clarity);
+    console.log(`clarity: ${clarity}`);
   },
 
   onAccept: function (cookie) {
@@ -44,7 +44,7 @@ cc.run({
 
   onChange: function (cookie, changed_preferences) {
     if (!cc.allowedCategory('analytics')) {
-      window.clarity('stop');
+      // window.clarity('stop');
     }
   },
 
