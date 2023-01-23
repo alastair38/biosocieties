@@ -31,7 +31,7 @@ cc.run({
   },
 
   onAccept: function (cookie) {
-    if (cc.allowedCategory('analytics') && analytics) {
+    if (cc.allowedCategory('analytics')) {
       window.clarity('consent');
     }
 
