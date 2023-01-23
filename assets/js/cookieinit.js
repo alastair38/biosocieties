@@ -170,7 +170,7 @@ cc.run({
               },
               {
                 col1: '^CLID', // match all cookies starting with "_ga"
-                col2: location.hostname,
+                col2: 'www.clarity.ms',
                 col3: '2 years',
                 col4: 'description ...',
                 is_regex: true,
@@ -191,7 +191,7 @@ cc.run({
               },
               {
                 col1: '^MUID', // match all cookies starting with "_ga"
-                col2: location.hostname,
+                col2: '.clarity.ms',
                 col3: '2 years',
                 col4: 'description ...',
                 is_regex: true,
