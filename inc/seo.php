@@ -148,8 +148,12 @@ function blockhaus_opengraph() {
       }  if(is_author()) {
       
       
-        $curauth = $post->post_author;
         
+        
+        global $wp_query;
+        
+        $query = $wp_query->query_vars;
+        $curauth = $query['author'];
         $excerpt = get_field('profile_biography', 'user_' . $curauth);
         $excerpt = strip_tags($excerpt);
         $excerpt = substr($excerpt, 0, 160);
@@ -188,7 +192,7 @@ function blockhaus_opengraph() {
       }
   }
 
-  add_action('wp_head', 'blockhaus_opengraph', 10);
+  add_action('wp_head', 'blockhaus_opengraph', 100);
   
   
   add_filter( 'pre_get_document_title', 'filter_document_title' );
