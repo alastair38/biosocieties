@@ -128,12 +128,10 @@ function blockhaus_opengraph() {
         } else {
         $excerpt = get_bloginfo( "description" );
         }
-     
-        
-      
       
       $permalink = get_post_type_archive_link($post_type);
       ?>
+      <link rel="canonical" href="<?php echo $permalink; ?>">
       <meta name="description" content="<?php echo $excerpt; ?>"/>
       <meta property="og:title" content="<?php echo the_archive_title(); ?>"/>
       <meta property="og:description" content="<?php echo $excerpt; ?>"/>
@@ -171,6 +169,7 @@ function blockhaus_opengraph() {
 
         $permalink = get_author_posts_url($curauth);
         ?>
+        <link rel="canonical" href="<?php echo $permalink; ?>">
         <meta name="description" content="<?php echo $excerpt; ?>"/>
         <meta property="og:title" content="<?php echo the_archive_title(); ?>"/>
         <meta property="og:description" content="<?php echo $excerpt; ?>"/>
@@ -190,3 +189,13 @@ function blockhaus_opengraph() {
   }
 
   add_action('wp_head', 'blockhaus_opengraph', 10);
+  
+  
+  add_filter( 'pre_get_document_title', 'filter_document_title' );
+function filter_document_title( $title ) {
+if ( is_front_page() ) {
+    $title = get_bloginfo('title'); 
+
+    return $title; 
+}
+}
