@@ -12,13 +12,15 @@ $external_link = get_field('external_link');
 <article id="post-<?php the_ID(); ?>" class="relative flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row items-center' : 'flex-col justify-between';?> gap-2 rounded-md shadow-md">
 
 
-	<a class="hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400 overflow-hidden w-full h-full rounded-md flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row' : 'flex-col';?>" href="<?php 
+	<a class="hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400 overflow-hidden w-full h-full rounded-md flex <?php print ((get_post_type() === 'journal_editions') || is_author()) ? 'flex-row' : 'flex-col';?>" 
 	
-	if($external_link) {
-		echo esc_url( $external_link );
-		} else {
-			echo esc_url( get_permalink() );
-			}?>" class="entry-header absolute bg-primary-default p-2 bottom-2 right-2 left-2">
+	<?php 
+	if($external_link) {?>
+		rel="external" href="<?php echo esc_url( $external_link );?>"
+	 <?php } else {?>
+		href="<?php echo esc_url( get_permalink() );?>"
+	<?php }?>
+	class="entry-header absolute bg-primary-default p-2 bottom-2 right-2 left-2">
 			
 			<?php 
 if(('video' === get_post_type())):

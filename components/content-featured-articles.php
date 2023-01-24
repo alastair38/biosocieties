@@ -24,12 +24,15 @@ $articles = get_posts(array(
 			
 				
 				<div class="relative flex rounded-md snap-center shadow-md">
-					<a class="w-full h-full text-sm flex rounded-md overflow-hidden hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400" href="
-					<?php if($external_link) {
-					echo esc_url( $external_link );
-					} else { echo get_the_permalink($item->ID); }?>
+					<a class="w-full h-full text-sm flex rounded-md overflow-hidden hover:ring-2 hover:ring-yellow-400 focus:ring-2 focus:ring-yellow-400" 
 					
-					">
+					<?php 
+					if($external_link) {?>
+						rel="external" href="<?php echo esc_url( $external_link );?>"
+					<?php } else {?>
+						href="<?php echo esc_url( get_permalink($item->ID) );?>"
+					<?php }?>
+					>
 					<?php echo get_the_post_thumbnail($item->ID, 'large', array( 'class' => 'w-full' ));?>
 					
 					 <span class="absolute lg:min-h-[7rem] bottom-0 left-0 right-0 text-primary-default bg-neutral-dark-900 text-primary-default px-1 py-1 lg:py-2 lg:px-2 flex items-center font-serif rounded-b-md" > <?php echo get_the_title($item->ID);?></span>

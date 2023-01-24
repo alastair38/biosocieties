@@ -145,10 +145,47 @@ function blockhaus_opengraph() {
       <meta name="twitter:description" content="<?php echo $excerpt; ?>" />
       <meta name="twitter:image" content="<?php echo $img; ?>" />
       <?php
-      }  if(is_author()) {
+      }  
       
+      if(is_home() && !is_front_page() ) {
       
+        $post_type = get_post_type();
         
+        $img_src = get_field($post_type . '_page_header', 'options');
+        if($img_src) {
+        $img = $img_src['sizes']['social'];
+        } else {
+        $default_img = get_field('page_header', 'options');
+        $img = $default_img['sizes']['social'];
+        }
+        
+       
+          $excerpt = get_field($post_type . '_page_description', 'option');
+          if($excerpt) {
+          $excerpt = strip_tags($excerpt);
+          } else {
+          $excerpt = get_bloginfo( "description" );
+          }
+        
+        $permalink = get_post_type_archive_link($post_type);
+        ?>
+        <link rel="canonical" href="<?php echo $permalink; ?>">
+        <meta name="description" content="<?php echo $excerpt; ?>"/>
+        <meta property="og:title" content="<?php echo the_archive_title(); ?>"/>
+        <meta property="og:description" content="<?php echo $excerpt; ?>"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:url" content="<?php echo $permalink; ?>"/>
+        <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+        <meta property="og:image" content="<?php echo $img; ?>"/>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="<?php echo $permalink; ?>" />
+        <meta name="twitter:title" content="<?php echo the_archive_title(); ?>" />
+        <meta name="twitter:description" content="<?php echo $excerpt; ?>" />
+        <meta name="twitter:image" content="<?php echo $img; ?>" />
+        <?php
+        }
+      
+      if(is_author()) {
         
         global $wp_query;
         

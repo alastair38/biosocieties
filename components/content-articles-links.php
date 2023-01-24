@@ -13,7 +13,7 @@ if( have_rows('articles-and-reviews_page_links', 'options') ):?>
 	<?php	// Loop through rows.
 		while( have_rows('articles-and-reviews_page_links', 'options') ) : the_row();?>
 
-<li><a class="rounded-full px-3 py-1 bg-neutral-dark-900 text-primary-default hover:bg-neutral-dark-100 focus:bg-neutral-dark-100" href="<?php the_sub_field('page_url');?>"><?php the_sub_field('page_name');?></a></li>
+<li><a class="rounded-full px-3 py-1 bg-neutral-dark-900 text-primary-default hover:bg-neutral-dark-100 focus:bg-neutral-dark-100" rel="external" href="<?php the_sub_field('page_url');?>"><?php the_sub_field('page_name');?></a></li>
 
 		<?php // End loop.
 		endwhile;
