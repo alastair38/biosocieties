@@ -44,7 +44,7 @@ if( have_rows('details', 'option') ):?>
 			?>
 			<li class="flex-1 flex flex-col gap-4 items-center justify-center">
 				<a class="flex-1" rel="external" href="<?php echo $url;?>">
-				<img class="object-contain w-3/5 mx-auto h-full" height="<?php echo $logo_img['sizes']['medium-height'];?>" width="<?php echo $logo_img['sizes']['medium-width'];?>" src="<?php echo $logo_img['sizes']['medium'];?>" alt="<?php echo $logo_img['alt'];?>"/>
+				<img class="object-contain w-3/5 mx-auto h-full" height="<?php echo $logo_img['sizes']['medium-height'];?>" width="<?php echo $logo_img['sizes']['medium-width'];?>" src="<?php echo $logo_img['sizes']['medium'];?>" alt="<?php echo $logo_img['alt'];?>" loading="lazy"/>
 				
 			</a>
 			</li>
