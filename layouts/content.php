@@ -25,8 +25,17 @@ $external_link = get_field('external_link');
 			<?php 
 if(('video' === get_post_type())):
 	blockhaus_post_thumbnail('full', 'aspect-video object-top'); 
-elseif(('journal_editions' === get_post_type())):?>
+elseif(('journal_editions' === get_post_type())):
+
+
+	if(has_post_thumbnail()):
+	
+		blockhaus_post_thumbnail( 'thumbnail', 'w-32 object-cover h-full aspect-square bg-accent-default' ); 
+
+	else:?>
 	<img src="<?php echo get_template_directory_uri() . '\assets\images\defaults\biosocieties-covers.png'?>" alt="A selection of BioSocieties journals covers fanned out" width="128px" height="166px" class="w-32 object-contain h-full aspect-square p-2 bg-accent-default">
+	
+	<?php endif;?>
 <?php elseif(('articles-and-reviews' === get_post_type())):
 	blockhaus_post_thumbnail('full', 'h-60 object-top'); ?>
 <?php elseif(is_author()):
